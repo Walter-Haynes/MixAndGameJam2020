@@ -1,0 +1,16 @@
+{
+    "name": "LeanGUIShapes",
+    "references": [
+        "LeanCommon",
+        "LeanTransition",
+        "LeanGUI"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
