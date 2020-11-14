@@ -116,10 +116,12 @@ namespace Scripts.Game.Player.Movement
         
         private void FixedUpdate()
         {
-            if(IsGrounded && NotJumping)
+            if(IsGrounded)
             {
                 _velocity.y = 0;
             }
+
+            visuals.GetComponent<SpriteRenderer>().color = IsGrounded ? Color.green : Color.yellow; 
 
             foreach (PlayerAbility __ability in Abilities)
             {
@@ -128,8 +130,14 @@ namespace Scripts.Game.Player.Movement
             
             if (!IsGrounded)
             {
-                Debug.Log(Gravity);
-                _velocity.y += Gravity.y * Time.deltaTime;
+                if (HasNormalGravity) //I don't get why I have to do this. 10 + -40 = -30, right?!
+                {
+                    _velocity.y += Gravity.y * Time.deltaTime;   
+                }
+                else
+                {
+                    _velocity.y -= Gravity.y * Time.deltaTime;   
+                }
             }
 
             transform.Translate(translation: _velocity * Time.deltaTime);
@@ -179,6 +187,18 @@ namespace Scripts.Game.Player.Movement
                 direction: -transform.up, 
                 distance: (0.01f), 
                 layerMask: groundLayer);
+            
+            Debug.DrawRay(start: __playerBounds.center, dir: -transform.up * (__playerBounds.size.y + 0.01f), Color.magenta);
+
+            if (__hit.collider != null)
+            {
+                Vector3 __point = __hit.point;
+                Vector3 __vertical   = __point + new Vector3(0, -0.1f);
+                Vector3 __horizontal = __point + new Vector3(-0.1f, 0);
+                
+                Debug.DrawRay(start: __vertical,   dir: transform.right * 0.2f, Color.red, duration: 10);
+                Debug.DrawRay(start: __horizontal, dir: transform.up * 0.2f,    Color.red, duration: 10);
+            }
 
             return (__hit.collider != null);
         }
