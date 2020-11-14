@@ -9,8 +9,8 @@ public class BeatDetection : AudioSyncer
         if (m_isBeat) return;
     }
 
-    public override void OnBeat(float val) {
-        base.OnBeat(val);
+    public override void OnBeat(float val, BEAT_TYPE beatType) {
+        base.OnBeat(val, beatType);
 
         // Threshold
         if (val >= bias + (bias * .5)) {
