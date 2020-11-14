@@ -12,11 +12,26 @@ namespace Scripts.Game.Player.Movement
     [RequireComponent(typeof(BoxCollider2D))]
     public sealed class PlayerController2D : MonoBehaviour
     {
+        #region Fields
+
         [SerializeField] private BoxCollider2D boxCollider;
-
-        [SerializeField] private LayerMask groundLayer;
-
         [SerializeField] internal Transform visuals;
+
+        [SerializeField] private LayerMask groundLayer = 1 << 0;
+        [SerializeField] private float slopeLimit = 30f;
+
+        [SerializeField] private float skinWidth = 0.01f;
+        private const float MIN_MOVE_DISTANCE = 0.001f;
+
+        private Rigidbody2D _rigidbody2D;
+        
+        private Vector2 _movement;
+
+        // Misc
+        [HideInInspector][NonSerialized] 
+        private ContactFilter2D _contactFilter;
+
+        #endregion
 
         #region Properties
 
@@ -26,21 +41,25 @@ namespace Scripts.Game.Player.Movement
         [PublicAPI]
         public PlayerInputs.GameplayActions Inputs { get; private set; }
         
+        private IEnumerable<PlayerAbility> Abilities => GetComponents<PlayerAbility>();
+        
         private bool _isGrounded = false;
         [PublicAPI]
         public bool IsGrounded 
         {
             //If we're not grounded do an extra check, just in case.
             //get => _isGrounded = (_isGrounded || ExplicitlyGrounding());
-            get
-            {
-                if (_isGrounded) return true;
-
-                return (_isGrounded = CheckGrounding());
-            }
+            get => _isGrounded = (_isGrounded || CheckGroundingCircle());
+                //if (_isGrounded) return true;
+                //return (_isGrounded = CheckGrounding());
+                
             internal set => _isGrounded = value;
         }
         
+        [PublicAPI]
+        public bool HitsCeiling { get; private set; }
+        
+        [field: SerializeField]
         [PublicAPI]
         public Vector2 Gravity { get; internal set; } = new Vector2(0, -50);
 
@@ -48,25 +67,37 @@ namespace Scripts.Game.Player.Movement
         public bool HasNormalGravity => (Gravity.y < 0);
 
         /// <summary> Player is not moving up (So it's either standing still, or falling) </summary>
-        private bool NotJumping => HasNormalGravity ? (_velocity.y < 0) : (_velocity.y > 0);
+        private bool NotJumping => HasNormalGravity ? (_movement.y < 0) : (_movement.y > 0);
+        
+        private Vector2 MaxSlopeNormal => Quaternion.AngleAxis(slopeLimit, transform.forward) * transform.up;
+        
+        public Vector2 GroundNormal { get; private set; }
 
         #endregion
-        
-
-        private Vector2 _velocity;
-
-        private IEnumerable<PlayerAbility> Abilities => GetComponents<PlayerAbility>();
 
         #region Methods
 
         private void Awake()
         {
-            if (boxCollider != null) return;
-        
-            if(TryGetComponent(component: out BoxCollider2D __boxCollider2D))
+            if (boxCollider == null)
             {
-                boxCollider = __boxCollider2D;
+                if(TryGetComponent(component: out BoxCollider2D __result))
+                {
+                    boxCollider = __result;
+                }   
             }
+
+            if (_rigidbody2D == null)
+            {
+                if(TryGetComponent(component: out Rigidbody2D __result))
+                {
+                    _rigidbody2D = __result;
+                }   
+            }
+
+            _contactFilter.useTriggers = false;
+            _contactFilter.SetLayerMask(~groundLayer);
+            _contactFilter.useLayerMask = true;
         }
 
         private void Reset()
@@ -75,6 +106,19 @@ namespace Scripts.Game.Player.Movement
             {
                 boxCollider = __boxCollider2D;
             }
+
+            visuals = transform.GetChild(0).transform;
+            
+            _rigidbody2D = GetComponent<Rigidbody2D>();
+
+            _rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+            _rigidbody2D.useFullKinematicContacts = true;
+            _rigidbody2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            _rigidbody2D.sleepMode = RigidbodySleepMode2D.NeverSleep;
+            _rigidbody2D.interpolation = RigidbodyInterpolation2D.Interpolate;
+            _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            //blockerMask = Physics2D.GetLayerCollisionMask(gameObject.layer);
         }
 
         private void OnEnable()
@@ -92,7 +136,7 @@ namespace Scripts.Game.Player.Movement
         [PublicAPI]
         public void Move(in Vector2 velocity)
         {
-            _velocity = velocity;
+            _movement = velocity;
         }
         [PublicAPI]
         public void Move(in float? x = null, in float? y = null)
@@ -102,11 +146,11 @@ namespace Scripts.Game.Player.Movement
             
             if     (__hasX && !__hasY)
             {
-                _velocity.x = (float)x;
+                _movement.x = (float)x;
             }
             else if(!__hasX && __hasY)
             {
-                _velocity.y = (float)y;
+                _movement.y = (float)y;
             }
             if (__hasX && __hasY)
             {
@@ -116,9 +160,9 @@ namespace Scripts.Game.Player.Movement
         
         private void FixedUpdate()
         {
-            if(IsGrounded)
+            if(IsGrounded) //&& NotJumping
             {
-                _velocity.y = 0;
+                _movement.y = 0;
             }
 
             visuals.GetComponent<SpriteRenderer>().color = IsGrounded ? Color.green : Color.yellow; 
@@ -132,15 +176,24 @@ namespace Scripts.Game.Player.Movement
             {
                 if (HasNormalGravity) //I don't get why I have to do this. 10 + -40 = -30, right?!
                 {
-                    _velocity.y += Gravity.y * Time.deltaTime;   
+                    _movement.y += Gravity.y * Time.deltaTime;   
                 }
                 else
                 {
-                    _velocity.y -= Gravity.y * Time.deltaTime;   
+                    _movement.y -= Gravity.y * Time.deltaTime;   
                 }
             }
+            
+            IsGrounded = false;
+            HitsCeiling = false;
 
-            transform.Translate(translation: _velocity * Time.deltaTime);
+            Vector2 __movementX = Vector2.Scale(_movement, Vector2.right);
+            Vector2 __movementY = Vector2.Scale(_movement, transform.up);
+
+            _rigidbody2D.velocity = new Vector2(__movementX.x, __movementY.y);
+
+            //Translate(__movementX * Time.deltaTime);	
+            //Translate(__movementY * Time.deltaTime);
 
             ResolveCollisions();
         }
@@ -175,6 +228,40 @@ namespace Scripts.Game.Player.Movement
                 }
             }
         }
+        
+        private readonly RaycastHit2D[] _hitBuffer = new RaycastHit2D[16];
+        private void Translate(in Vector2 velocity) 
+        {
+            float __distance = velocity.magnitude;
+
+            if(__distance > MIN_MOVE_DISTANCE)
+            {
+                int __count = _rigidbody2D.Cast(velocity.normalized, _contactFilter, _hitBuffer,
+                    distance: __distance + skinWidth);
+
+                for(int __index = 0; __index < __count; __index++)
+                {
+                    Vector2 __hitNormal = _hitBuffer[__index].normal;
+
+                    Debug.Log(MaxSlopeNormal);
+                    
+                    if(__hitNormal.y >= MaxSlopeNormal.y)
+                    {
+                        IsGrounded = true;
+                        GroundNormal = __hitNormal;
+                    }
+                    else if(__hitNormal.y <= -MaxSlopeNormal.y)
+                    {
+                        HitsCeiling = true;
+                    }
+
+                    float __modifiedDistance = _hitBuffer[__index].distance - skinWidth;
+                    __distance = (__modifiedDistance < __distance) ? __modifiedDistance : __distance;
+                }
+            }
+
+            _rigidbody2D.position += velocity.normalized * __distance;
+        }
 
         private bool CheckGrounding()
         {
@@ -202,7 +289,27 @@ namespace Scripts.Game.Player.Movement
 
             return (__hit.collider != null);
         }
+
+        private bool CheckGroundingCircle()
+        {
+            Bounds __playerBounds = boxCollider.bounds;
+            Vector3 __offset = new Vector3(x: 0, y: __playerBounds.size.y / 2.0f, z: 0) * (HasNormalGravity ? -1 : 1);
+
+            Vector3 __groundCheckPos = __playerBounds.center + __offset;
+            
+            return Physics2D.OverlapCircle(point: __groundCheckPos, radius: 0.3f, layerMask: groundLayer);
+        }
         
+        private void OnDrawGizmos()
+        {
+            Bounds __colliderBounds = boxCollider.bounds;
+            Vector3 __offset = new Vector3(x: 0, y: __colliderBounds.size.y / 2.0f, z: 0) * (HasNormalGravity ? -1 : 1);
+
+            Vector3 __groundCheckPos = __colliderBounds.center + __offset;
+
+            Gizmos.DrawSphere(center: __groundCheckPos, radius: 0.3f); 
+        }
+
         #endregion
         
     }

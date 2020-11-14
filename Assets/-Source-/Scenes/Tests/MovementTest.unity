@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -431,7 +431,7 @@ Transform:
   m_GameObject: {fileID: 1234798183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 8.5, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -531,6 +531,7 @@ GameObject:
   - component: {fileID: 1461633901}
   - component: {fileID: 1461633904}
   - component: {fileID: 1461633905}
+  - component: {fileID: 1461633906}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -546,7 +547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461633898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.25, z: 0}
+  m_LocalPosition: {x: -1.85, y: 2.49, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 1456913570}
@@ -605,10 +606,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 1461633902}
+  visuals: {fileID: 1456913570}
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
-  visuals: {fileID: 1456913570}
+  slopeLimit: 30
+  skinWidth: 0.01
+  <Gravity>k__BackingField: {x: 0, y: -35}
 --- !u!114 &1461633904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,6 +638,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aeeb87d6fc26ee449604836fe502d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1461633906
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461633898}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &1623565617
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +736,7 @@ Transform:
   m_GameObject: {fileID: 1623565617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -6.75, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

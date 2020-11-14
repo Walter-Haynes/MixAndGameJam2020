@@ -9,7 +9,7 @@ public sealed class CharacterController2D : MonoBehaviour
 {
 	// Properties
 	[SerializeField] private float skinWidth = 0.01f;
-	[SerializeField] private  float minMoveDistance = 0.001f;
+	[SerializeField] private float minMoveDistance = 0.001f;
 
 	[SerializeField] private  float slopeLimit = 30f;
 
@@ -74,7 +74,7 @@ public sealed class CharacterController2D : MonoBehaviour
 		isOnOneWayPlatform = false;
 		
 		Vector2 __movementX = Vector2.Scale(movement, Vector2.right);
-		Vector2 __movementY = Vector2.Scale(movement, Vector2.up);
+		Vector2 __movementY = Vector2.Scale(movement, transform.up);
 		
 		if(slideAlongGroundNormal)
 		{
