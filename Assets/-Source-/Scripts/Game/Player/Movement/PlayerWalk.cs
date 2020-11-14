@@ -11,7 +11,7 @@ namespace Scripts.Game.Player.Movement
 	
 	[DisallowMultipleComponent]
 	[RequireComponent(typeof(PlayerController2D))]
-	public sealed class PlayerWalk : PlayerComponent
+	public sealed class PlayerWalk : PlayerAbility
 	{
 		#region Fields
 

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 using JetBrains.Annotations;
+using Sirenix.OdinInspector;
 
 namespace Scripts.Game.Player.Movement
 {
@@ -12,16 +14,32 @@ namespace Scripts.Game.Player.Movement
     {
         [SerializeField] private BoxCollider2D boxCollider;
 
+        [SerializeField] private LayerMask groundLayer;
+
         [PublicAPI]
         public PlayerInputs InputActions { get; private set; }
         
         [PublicAPI]
         public PlayerInputs.GameplayActions Inputs { get; private set; }
         
+        private bool _isGrounded = false;
         [PublicAPI]
-        public bool IsGrounded { get; private set; }
+        public bool IsGrounded 
+        {
+            //If we're not grounded do an extra check, just in case.
+            //get => _isGrounded = (_isGrounded || ExplicitlyGrounding());
+            get
+            {
+                if (_isGrounded) return true;
+
+                return (_isGrounded = CheckGrounding());
+            }
+            private set => _isGrounded = value;
+        }
 
         private Vector2 _velocity;
+
+        private IEnumerable<PlayerAbility> Abilities => GetComponents<PlayerAbility>();
 
         #region Methods
 
@@ -60,41 +78,47 @@ namespace Scripts.Game.Player.Movement
         {
             _velocity = velocity;
         }
-
         [PublicAPI]
         public void Move(in float? x = null, in float? y = null)
         {
-            bool __hasX = (x == null), __hasY = (y == null);
+            bool __hasX = (x != null); 
+            bool __hasY = (y != null);
             
             if     (__hasX && !__hasY)
             {
                 _velocity.x = (float)x;
-                
-                //Move(velocity: new Vector2(x: (float)x, y: 0));
             }
             else if(!__hasX && __hasY)
             {
                 _velocity.y = (float)y;
-                //Move(velocity: new Vector2(x: 0, y: (float)y));
             }
             else if (__hasX && __hasY)
             {
-                _velocity.x = (float)x;
-                _velocity.y = (float)y;
-                
-                //Move(velocity: new Vector2(x: (float)x, y: (float)y)); 
+                Move(velocity: new Vector2(x: (float)x, y: (float)y)); 
             }
         }
         
         private void FixedUpdate()
         {
-            /*
-            if(IsGrounded)
+            if(IsGrounded && (_velocity.y < 0))
             {
                 _velocity.y = 0;
             }
-            */
-            _velocity.y += Physics2D.gravity.y * Time.deltaTime;
+
+            foreach (PlayerAbility __ability in Abilities)
+            {
+                __ability.AbilityFixedUpdate();
+            }
+
+            if (IsGrounded)
+            {
+                Debug.Log("Ground");   
+            }
+
+            if (!IsGrounded)
+            {
+                _velocity.y += Physics2D.gravity.y * Time.deltaTime;
+            }
 
             transform.Translate(translation: _velocity * Time.deltaTime);
 
@@ -105,8 +129,7 @@ namespace Scripts.Game.Player.Movement
         private void ResolveCollisions()
         {
             IsGrounded = false;
-
-            // Retrieve all colliders we have intersected after velocity has been applied.
+            
             int __overlappingCollidersCount = Physics2D.OverlapBoxNonAlloc(point: transform.position, size: boxCollider.size, angle: 0, results: _overlappingColliders);
 
             for(uint __colliderIndex = 0; __colliderIndex < __overlappingCollidersCount; __colliderIndex++)
@@ -130,6 +153,21 @@ namespace Scripts.Game.Player.Movement
                     IsGrounded = true;
                 }
             }
+        }
+
+        private bool CheckGrounding()
+        {
+            Bounds __playerBounds = boxCollider.bounds;
+            
+            RaycastHit2D __hit = Physics2D.BoxCast(
+                origin: __playerBounds.center, 
+                size: __playerBounds.size, 
+                angle: 0, 
+                direction: Vector2.down, 
+                distance: (0.01f), //__playerBounds.size.y + 0.1f 
+                layerMask: groundLayer);
+
+            return (__hit.collider != null);
         }
         
         #endregion

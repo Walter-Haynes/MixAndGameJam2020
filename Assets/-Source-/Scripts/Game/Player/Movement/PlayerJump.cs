@@ -8,9 +8,8 @@ namespace Scripts.Game.Player.Movement
 {
 	using Utilities;
 	
-	//[ExecuteBefore(typeof())]
 	[DisallowMultipleComponent]
-	public sealed class PlayerJump : PlayerComponent
+	public sealed class PlayerJump : PlayerAbility
 	{
 		#region Fields
 		
@@ -29,8 +28,10 @@ namespace Scripts.Game.Player.Movement
 			Player.Inputs.Jump.performed += _ => _wannaJump = true;
 		}
 
-		private void FixedUpdate()
+		internal override void AbilityFixedUpdate()
 		{
+			base.AbilityFixedUpdate();
+			
 			if (_wannaJump)
 			{
 				TryJump();

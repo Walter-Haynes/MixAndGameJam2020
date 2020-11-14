@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 1461633902}
   - component: {fileID: 1461633903}
   - component: {fileID: 1461633901}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,6 +464,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 1461633902}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &1623565617
 GameObject:
   m_ObjectHideFlags: 0
