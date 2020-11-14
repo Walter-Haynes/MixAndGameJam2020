@@ -24,5 +24,9 @@ namespace Scripts.Utilities
 		[PublicAPI]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static float AngleTo(this Vector2 from, in Vector2 to) => Vector2.Angle(from, to);
+		
+		[PublicAPI]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static float NormalToAngle(this Vector2 normal) => Mathf.Abs(Mathf.Atan2(normal.x, normal.y) * Mathf.Rad2Deg);
 	}
 }

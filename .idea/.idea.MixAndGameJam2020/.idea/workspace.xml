@@ -31,18 +31,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5faf068a-516a-4611-91a8-ad6a09e3bead" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scenes/Tests/RythmTest01.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scenes/Tests/RythmTest01/RhyhmTest01_Scene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scenes/Tests/RythmTest01/RhyhmTest01_Scene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Tests.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Tests/RhythmTest_01.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Tests/Tests.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Tests/Tests.asmdef.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scenes/Tests.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,13 +44,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/CharacterController2D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/MathUtils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/GridCharacterController2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerAbility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/JumpAbility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/UtilsGeneral.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/MathUtils.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/Singleton.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/BehaviourSingleton.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonScriptableObject.cs" />
@@ -67,6 +63,21 @@
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Tests/RhythmTest_01/Grid.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Tests/RhythmTest_01/GridPlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridFirstPersonController.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/GridCharacterController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerJump.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/UtilsGeneral.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerWalk.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerSideJump.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/JumpAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/SideJumpAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/WalkAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/CharacterController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/MathUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/GravityFlipAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" />
       </list>
     </option>
   </component>
@@ -112,7 +123,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605310221894</updated>
-      <workItem from="1605310274565" duration="4689000" />
+      <workItem from="1605310274565" duration="35166000" />
+      <workItem from="1605383846043" duration="1352000" />
+      <workItem from="1605385270324" duration="3158000" />
     </task>
     <servers />
   </component>
@@ -131,6 +144,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
