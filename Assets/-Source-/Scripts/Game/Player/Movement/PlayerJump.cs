@@ -14,7 +14,7 @@ namespace Scripts.Game.Player.Movement
 		#region Fields
 		
 		[Tooltip("Jump height of the character, regardless of Gravity")]
-		[SerializeField] private float jumpHeight = 4;
+		[SerializeField] private float jumpHeight = 2;
 		
 		[UsedImplicitly]
 		private bool _wannaJump = false;
