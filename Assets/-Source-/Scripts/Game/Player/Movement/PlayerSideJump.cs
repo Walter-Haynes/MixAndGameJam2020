@@ -72,7 +72,7 @@ namespace Scripts.Game.Player.Movement
 			transform
 				.localPositionTransition_Y(position: __startPos.y + sideJumpHeight, duration: sideJumpDuration / 2.0f, ease: LeanEase.SineOut)
 				.JoinTransition()
-				.localPositionTransition_Y(position: __startPos.y,  
+				.localPositionTransition_Y(position: __startPos.y                 , duration: sideJumpDuration / 2.0f, ease: LeanEase.SineOut);
 
 			return true;
 		}
