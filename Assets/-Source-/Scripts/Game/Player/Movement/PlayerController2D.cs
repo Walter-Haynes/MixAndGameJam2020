@@ -16,6 +16,10 @@ namespace Scripts.Game.Player.Movement
 
         [SerializeField] private LayerMask groundLayer;
 
+        [SerializeField] internal Transform visuals;
+
+        #region Properties
+
         [PublicAPI]
         public PlayerInputs InputActions { get; private set; }
         
@@ -34,8 +38,20 @@ namespace Scripts.Game.Player.Movement
 
                 return (_isGrounded = CheckGrounding());
             }
-            private set => _isGrounded = value;
+            internal set => _isGrounded = value;
         }
+        
+        [PublicAPI]
+        public Vector2 Gravity { get; internal set; } = new Vector2(0, -50);
+
+        [PublicAPI]
+        public bool HasNormalGravity => (Gravity.y < 0);
+
+        /// <summary> Player is not moving up (So it's either standing still, or falling) </summary>
+        private bool NotJumping => HasNormalGravity ? (_velocity.y < 0) : (_velocity.y > 0);
+
+        #endregion
+        
 
         private Vector2 _velocity;
 
@@ -100,10 +116,12 @@ namespace Scripts.Game.Player.Movement
         
         private void FixedUpdate()
         {
-            if(IsGrounded && (_velocity.y < 0))
+            if(IsGrounded)
             {
                 _velocity.y = 0;
             }
+
+            visuals.GetComponent<SpriteRenderer>().color = IsGrounded ? Color.green : Color.yellow; 
 
             foreach (PlayerAbility __ability in Abilities)
             {
@@ -112,7 +130,14 @@ namespace Scripts.Game.Player.Movement
             
             if (!IsGrounded)
             {
-                _velocity.y += Physics2D.gravity.y * Time.deltaTime;
+                if (HasNormalGravity) //I don't get why I have to do this. 10 + -40 = -30, right?!
+                {
+                    _velocity.y += Gravity.y * Time.deltaTime;   
+                }
+                else
+                {
+                    _velocity.y -= Gravity.y * Time.deltaTime;   
+                }
             }
 
             transform.Translate(translation: _velocity * Time.deltaTime);
@@ -137,13 +162,13 @@ namespace Scripts.Game.Player.Movement
 
                 // Skip if we are no longer overlapping with this collider. (could be pushed out already)
                 if (!__colliderDistance.isOverlapped) continue;
-            
-                transform.Translate(translation: __colliderDistance.pointA - __colliderDistance.pointB);
 
-                bool __colliderBeneathUs = (__colliderDistance.normal.AngleTo(Vector2.up) < 90);
-                bool __notJumping = (_velocity.y < 0);
-            
-                if(__colliderBeneathUs && __notJumping)
+                Transform __transform;
+                (__transform = transform).Translate(translation: __colliderDistance.pointA - __colliderDistance.pointB);
+
+                bool __colliderBeneathUs = (__colliderDistance.normal.AngleTo(__transform.up) < 90);
+
+                if(__colliderBeneathUs && NotJumping)
                 {
                     Debug.Log("Doot");
                     IsGrounded = true;
@@ -159,9 +184,21 @@ namespace Scripts.Game.Player.Movement
                 origin: __playerBounds.center, 
                 size: __playerBounds.size, 
                 angle: 0, 
-                direction: Vector2.down, 
+                direction: -transform.up, 
                 distance: (0.01f), 
                 layerMask: groundLayer);
+            
+            Debug.DrawRay(start: __playerBounds.center, dir: -transform.up * (__playerBounds.size.y + 0.01f), Color.magenta);
+
+            if (__hit.collider != null)
+            {
+                Vector3 __point = __hit.point;
+                Vector3 __vertical   = __point + new Vector3(0, -0.1f);
+                Vector3 __horizontal = __point + new Vector3(-0.1f, 0);
+                
+                Debug.DrawRay(start: __vertical,   dir: transform.right * 0.2f, Color.red, duration: 10);
+                Debug.DrawRay(start: __horizontal, dir: transform.up * 0.2f,    Color.red, duration: 10);
+            }
 
             return (__hit.collider != null);
         }

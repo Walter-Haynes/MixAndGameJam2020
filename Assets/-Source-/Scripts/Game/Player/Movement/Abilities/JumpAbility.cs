@@ -1,20 +1,18 @@
 ﻿using System.Runtime.CompilerServices;
-
 using UnityEngine;
-
 using JetBrains.Annotations;
 
-namespace Scripts.Game.Player.Movement
+namespace Scripts.Game.Player.Movement.Abilities
 {
 	using Utilities;
 	
 	[DisallowMultipleComponent]
-	public sealed class PlayerJump : PlayerAbility
+	public sealed class JumpAbility : PlayerAbility
 	{
 		#region Fields
 		
 		[Tooltip("Jump height of the character, regardless of Gravity")]
-		[SerializeField] private float jumpHeight = 4;
+		[SerializeField] private float jumpHeight = 2;
 		
 		[UsedImplicitly]
 		private bool _wannaJump = false;
@@ -47,7 +45,12 @@ namespace Scripts.Game.Player.Movement
 			if (!Player.IsGrounded) return false;
 
 			// Calculate the velocity required to achieve the target jump height.
-			float __jumpSpeed = Mathf.Sqrt(f: 2 * jumpHeight * Physics2D.gravity.y.Abs());
+			float __jumpSpeed = Mathf.Sqrt(f: 2 * jumpHeight * Player.Gravity.y.Abs());
+			if (Player.Gravity.y > 0)
+			{
+				__jumpSpeed *= -1;
+			}
+			
 			Player.Move(y: __jumpSpeed);
 			
 			return true;
