@@ -1,0 +1,17 @@
+{
+    "name": "Game.Core",
+    "references": [
+        "GUID:6e4e3a29ea6e585478492e378f735a59",
+        "GUID:545565c54cb2def4d8fd5fcc60c45fc9",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
