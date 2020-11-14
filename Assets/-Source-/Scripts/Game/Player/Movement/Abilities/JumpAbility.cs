@@ -9,7 +9,7 @@ namespace Scripts.Game.Player.Movement
 	using Utilities;
 	
 	[DisallowMultipleComponent]
-	public sealed class PlayerJump : PlayerAbility
+	public sealed class JumpAbility : PlayerAbility
 	{
 		#region Fields
 		

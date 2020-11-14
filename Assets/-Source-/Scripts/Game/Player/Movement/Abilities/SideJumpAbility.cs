@@ -11,7 +11,7 @@ namespace Scripts.Game.Player.Movement
 	using Utilities;
 	
 	[DisallowMultipleComponent]
-	public sealed class PlayerSideJump : PlayerAbility
+	public sealed class SideJumpAbility : PlayerAbility
 	{
 		#region Fields
 		
