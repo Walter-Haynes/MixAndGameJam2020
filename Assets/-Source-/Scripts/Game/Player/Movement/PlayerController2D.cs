@@ -25,6 +25,7 @@ namespace Scripts.Game.Player.Movement
 
         private Rigidbody2D _rigidbody2D;
         
+        [SerializeField]
         private Vector2 _movement;
 
         // Misc
@@ -35,27 +36,35 @@ namespace Scripts.Game.Player.Movement
 
         #region Properties
 
+        #region Inputs
+        
         [PublicAPI]
         public PlayerInputs InputActions { get; private set; }
         
         [PublicAPI]
         public PlayerInputs.GameplayActions Inputs { get; private set; }
-        
+
+        #endregion
+
         private IEnumerable<PlayerAbility> Abilities => GetComponents<PlayerAbility>();
         
-        private bool _isGrounded = false;
         [PublicAPI]
         public bool IsGrounded 
         {
-            //If we're not grounded do an extra check, just in case.
-            //get => _isGrounded = (_isGrounded || ExplicitlyGrounding());
-            get => _isGrounded = (_isGrounded || CheckGroundingCircle());
-                //if (_isGrounded) return true;
-                //return (_isGrounded = CheckGrounding());
-                
-            internal set => _isGrounded = value;
+            get
+            {
+                Bounds __playerBounds = boxCollider.bounds;
+                Vector3 __offset = new Vector3(x: 0, y: __playerBounds.size.y / 2.0f, z: 0) * (HasNormalGravity ? -1 : 1);
+
+                Vector3 __groundCheckPos = __playerBounds.center + __offset;
+            
+                return Physics2D.OverlapCircle(point: __groundCheckPos, radius: 0.3f, layerMask: groundLayer);
+            }
         }
-        
+
+        //[PublicAPI]
+        //public bool IsGrounded { get; internal set; } = false;
+
         [PublicAPI]
         public bool HitsCeiling { get; private set; }
         
@@ -69,9 +78,9 @@ namespace Scripts.Game.Player.Movement
         /// <summary> Player is not moving up (So it's either standing still, or falling) </summary>
         private bool NotJumping => HasNormalGravity ? (_movement.y < 0) : (_movement.y > 0);
         
-        private Vector2 MaxSlopeNormal => Quaternion.AngleAxis(slopeLimit, transform.forward) * transform.up;
+        //private Vector2 MaxSlopeNormal => Quaternion.AngleAxis(slopeLimit, transform.forward) * transform.up;
         
-        public Vector2 GroundNormal { get; private set; }
+        //public Vector2 GroundNormal { get; private set; }
 
         #endregion
 
@@ -183,26 +192,22 @@ namespace Scripts.Game.Player.Movement
                     _movement.y -= Gravity.y * Time.deltaTime;   
                 }
             }
-            
-            IsGrounded = false;
-            HitsCeiling = false;
 
             Vector2 __movementX = Vector2.Scale(_movement, Vector2.right);
             Vector2 __movementY = Vector2.Scale(_movement, transform.up);
 
-            _rigidbody2D.velocity = new Vector2(__movementX.x, __movementY.y);
+            //_rigidbody2D.velocity = new Vector2(__movementX.x, __movementY.y);
 
-            //Translate(__movementX * Time.deltaTime);	
-            //Translate(__movementY * Time.deltaTime);
-
-            ResolveCollisions();
+            //IsGrounded = false;
+            HitsCeiling = false;
+            MoveWithResolve(velocity: new Vector2(__movementX.x, __movementY.y) * Time.deltaTime);
+            
+            //ResolveCollisions();
         }
 
         private readonly Collider2D[] _overlappingColliders = new Collider2D[16];
         private void ResolveCollisions()
         {
-            IsGrounded = false;
-            
             int __overlappingCollidersCount = Physics2D.OverlapBoxNonAlloc(point: transform.position, size: boxCollider.size, angle: 0, results: _overlappingColliders);
 
             for(uint __colliderIndex = 0; __colliderIndex < __overlappingCollidersCount; __colliderIndex++)
@@ -215,21 +220,12 @@ namespace Scripts.Game.Player.Movement
 
                 // Skip if we are no longer overlapping with this collider. (could be pushed out already)
                 if (!__colliderDistance.isOverlapped) continue;
-
-                Transform __transform;
-                (__transform = transform).Translate(translation: __colliderDistance.pointA - __colliderDistance.pointB);
-
-                bool __colliderBeneathUs = (__colliderDistance.normal.AngleTo(__transform.up) < 90);
-
-                if(__colliderBeneathUs && NotJumping)
-                {
-                    Debug.Log("Doot");
-                    IsGrounded = true;
-                }
+                
+                transform.Translate(translation: __colliderDistance.pointA - __colliderDistance.pointB);
             }
         }
         
-        private readonly RaycastHit2D[] _hitBuffer = new RaycastHit2D[16];
+        /*
         private void Translate(in Vector2 velocity) 
         {
             float __distance = velocity.magnitude;
@@ -261,6 +257,39 @@ namespace Scripts.Game.Player.Movement
             }
 
             _rigidbody2D.position += velocity.normalized * __distance;
+        }
+        */
+
+        //private RaycastHit2D[] _hitBuffer = new RaycastHit2D[16];
+        
+        private readonly RaycastHit2D[] _hitBuffer = new RaycastHit2D[32];
+        private void Translate(in Vector2 velocity)
+        {
+            //Vector2 __velocity = _rigidbody2D.velocity;
+            float __distance = velocity.magnitude;
+
+            if (__distance > MIN_MOVE_DISTANCE)
+            {
+                int __hits = _rigidbody2D.Cast(direction: velocity.normalized, results: _hitBuffer, distance: __distance + skinWidth);
+
+                for (int __index = 0; __index < __hits; __index++)
+                {
+                    RaycastHit2D __hit = _hitBuffer[__index];
+
+                    //Vector2 __hitNormal = __hit.normal;
+                    //float __hitAngle = __hitNormal.NormalToAngle();
+
+                    Debug.DrawRay(__hit.point, __hit.normal);
+
+                    //if (__hitAngle <= slopeLimit) //ground
+
+                    float __modifiedDistance = __hit.distance - skinWidth;
+                    __distance = (__modifiedDistance < __distance) ? __modifiedDistance : __distance;
+                }
+            }
+
+            _rigidbody2D.position += velocity.normalized * __distance;
+
         }
 
         private bool CheckGrounding()
