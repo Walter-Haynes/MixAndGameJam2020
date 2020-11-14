@@ -92,7 +92,7 @@ namespace Scripts.Game.Player.Movement
             {
                 _velocity.y = (float)y;
             }
-            else if (__hasX && __hasY)
+            if (__hasX && __hasY)
             {
                 Move(velocity: new Vector2(x: (float)x, y: (float)y)); 
             }
@@ -109,12 +109,7 @@ namespace Scripts.Game.Player.Movement
             {
                 __ability.AbilityFixedUpdate();
             }
-
-            if (IsGrounded)
-            {
-                Debug.Log("Ground");   
-            }
-
+            
             if (!IsGrounded)
             {
                 _velocity.y += Physics2D.gravity.y * Time.deltaTime;
@@ -150,6 +145,7 @@ namespace Scripts.Game.Player.Movement
             
                 if(__colliderBeneathUs && __notJumping)
                 {
+                    Debug.Log("Doot");
                     IsGrounded = true;
                 }
             }
@@ -164,7 +160,7 @@ namespace Scripts.Game.Player.Movement
                 size: __playerBounds.size, 
                 angle: 0, 
                 direction: Vector2.down, 
-                distance: (0.01f), //__playerBounds.size.y + 0.1f 
+                distance: (0.01f), 
                 layerMask: groundLayer);
 
             return (__hit.collider != null);

@@ -35,6 +35,7 @@ namespace Scripts.Game.Player.Movement
 			if (_wannaJump)
 			{
 				TryJump();
+				_wannaJump = false;
 			}
 		}
 
@@ -43,17 +44,12 @@ namespace Scripts.Game.Player.Movement
 		{
 			//TODO: (Walter) Beat check.
 
-			if (!Player.IsGrounded)
-			{
-				_wannaJump = false;
-				return false;
-			}
-			
+			if (!Player.IsGrounded) return false;
+
 			// Calculate the velocity required to achieve the target jump height.
 			float __jumpSpeed = Mathf.Sqrt(f: 2 * jumpHeight * Physics2D.gravity.y.Abs());
 			Player.Move(y: __jumpSpeed);
-
-			_wannaJump = false;
+			
 			return true;
 		}
 

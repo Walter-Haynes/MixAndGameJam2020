@@ -1,9 +1,9 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 using UnityEngine;
 
 using JetBrains.Annotations;
+using Lean.Transition;
 
 namespace Scripts.Game.Player.Movement
 {
@@ -28,16 +28,38 @@ namespace Scripts.Game.Player.Movement
 			Player.Inputs.Right.performed += _ => _wannaWalkRight = true;
 		}
 
-		private void FixedUpdate()
+		internal override void AbilityFixedUpdate()
 		{
-			
+			if(_wannaWalkRight)
+			{
+				TryWalk(left: false);
+			}
+			else if(_wannaWalkLeft)
+			{
+				TryWalk(left: true);
+			}
+
+			//reset
+			_wannaWalkLeft = _wannaWalkRight = false;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		private bool TryWalk()
+		private bool TryWalk(in bool left)
 		{
+			//TODO: (Walter) Beat check.
+
+			if(!Player.IsGrounded) return false;
+
+			if (left)
+			{
+				transform.localPositionTransition_X(position: transform.localPosition.x - 1, duration: 0.05f);
+			}
+			else
+			{
+				transform.localPositionTransition_X(position: transform.localPosition.x + 1, duration: 0.05f);
+			}
 			
-			return false;
+			return true;
 		}
 
 		#endregion
