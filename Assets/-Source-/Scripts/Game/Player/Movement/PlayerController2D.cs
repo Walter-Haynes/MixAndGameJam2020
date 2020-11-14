@@ -16,6 +16,10 @@ namespace Scripts.Game.Player.Movement
 
         [SerializeField] private LayerMask groundLayer;
 
+        [SerializeField] internal Transform visuals;
+
+        #region Properties
+
         [PublicAPI]
         public PlayerInputs InputActions { get; private set; }
         
@@ -34,10 +38,20 @@ namespace Scripts.Game.Player.Movement
 
                 return (_isGrounded = CheckGrounding());
             }
-            private set => _isGrounded = value;
+            internal set => _isGrounded = value;
         }
         
+        [PublicAPI]
         public Vector2 Gravity { get; internal set; } = new Vector2(0, -50);
+
+        [PublicAPI]
+        public bool HasNormalGravity => (Gravity.y < 0);
+
+        /// <summary> Player is not moving up (So it's either standing still, or falling) </summary>
+        private bool NotJumping => HasNormalGravity ? (_velocity.y < 0) : (_velocity.y > 0);
+
+        #endregion
+        
 
         private Vector2 _velocity;
 
@@ -102,7 +116,7 @@ namespace Scripts.Game.Player.Movement
         
         private void FixedUpdate()
         {
-            if(IsGrounded && (_velocity.y < 0))
+            if(IsGrounded && NotJumping)
             {
                 _velocity.y = 0;
             }
@@ -114,6 +128,7 @@ namespace Scripts.Game.Player.Movement
             
             if (!IsGrounded)
             {
+                Debug.Log(Gravity);
                 _velocity.y += Gravity.y * Time.deltaTime;
             }
 
@@ -144,9 +159,8 @@ namespace Scripts.Game.Player.Movement
                 (__transform = transform).Translate(translation: __colliderDistance.pointA - __colliderDistance.pointB);
 
                 bool __colliderBeneathUs = (__colliderDistance.normal.AngleTo(__transform.up) < 90);
-                bool __notJumping = (_velocity.y < 0);
-            
-                if(__colliderBeneathUs && __notJumping)
+
+                if(__colliderBeneathUs && NotJumping)
                 {
                     Debug.Log("Doot");
                     IsGrounded = true;

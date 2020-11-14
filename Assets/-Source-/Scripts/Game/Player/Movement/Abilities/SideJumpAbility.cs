@@ -1,15 +1,15 @@
 ﻿using System.Runtime.CompilerServices;
 
 using UnityEngine;
-
-using JetBrains.Annotations;
-using Lean.Transition;
 using UnityEngine.InputSystem;
 
-namespace Scripts.Game.Player.Movement
+using JetBrains.Annotations;
+
+using Lean.Transition;
+
+namespace Scripts.Game.Player.Movement.Abilities
 {
-	using Utilities;
-	
+
 	[DisallowMultipleComponent]
 	public sealed class SideJumpAbility : PlayerAbility
 	{

@@ -1,15 +1,12 @@
 ﻿using System.Runtime.CompilerServices;
-
 using UnityEngine;
-
 using JetBrains.Annotations;
-using Lean.Transition;
-using UnityEngine.InputSystem;
 
-namespace Scripts.Game.Player.Movement
+using Lean.Transition;
+
+namespace Scripts.Game.Player.Movement.Abilities
 {
-	using Utilities;
-	
+
 	[DisallowMultipleComponent]
 	public sealed class WalkAbility : PlayerAbility
 	{
@@ -59,23 +56,24 @@ namespace Scripts.Game.Player.Movement
 
 			if(!Player.IsGrounded) return false;
 			
-			Vector3 __startPos = transform.localPosition;
+			Vector3 __playerStartPos = Player.transform.localPosition;
 			
 			if (_wannaWalkLeft)
 			{
-
-				transform.localPositionTransition_X(position: __startPos.x - 1, duration: hopDuration);
+				transform.localPositionTransition_X(position: __playerStartPos.x - 1, duration: hopDuration);
 			}
 			else
 			{
-				transform.localPositionTransition_X(position: __startPos.x + 1, duration: hopDuration);
+				transform.localPositionTransition_X(position: __playerStartPos.x + 1, duration: hopDuration);
 			}
-			
+
+			Vector3 __visualsStartPos = Player.visuals.localPosition;
+			float __hopY = 0.25f * (Player.HasNormalGravity ? 1 : -1);
 			//hop
-			transform
-				.localPositionTransition_Y(position: __startPos.y + 0.25f, duration: hopDuration / 2.0f, ease: LeanEase.SineOut)
+			Player.visuals
+				.localPositionTransition_Y(position: __visualsStartPos.y + __hopY, duration: hopDuration / 2.0f, ease: LeanEase.SineOut)
 				.JoinTransition()
-				.localPositionTransition_Y(position: __startPos.y,         duration: hopDuration / 2.0f, ease: LeanEase.SineOut);
+				.localPositionTransition_Y(position: __visualsStartPos.y,          duration: hopDuration / 2.0f, ease: LeanEase.SineOut);
 
 			return true;
 		}

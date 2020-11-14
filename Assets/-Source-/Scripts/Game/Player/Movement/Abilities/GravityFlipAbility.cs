@@ -4,10 +4,9 @@ using UnityEngine;
 
 using JetBrains.Annotations;
 
-namespace Scripts.Game.Player.Movement
+namespace Scripts.Game.Player.Movement.Abilities
 {
-	using Utilities;
-	
+
 	[DisallowMultipleComponent]
 	public sealed class GravityFlipAbility : PlayerAbility
 	{
@@ -47,6 +46,7 @@ namespace Scripts.Game.Player.Movement
 
 			Vector3 __currentRotation = Player.transform.rotation.eulerAngles;
 			Player.transform.rotation = Quaternion.Euler(__currentRotation.x, __currentRotation.y, __currentRotation.z + 180);
+			Player.IsGrounded = false;
 
 			return true;
 		}
