@@ -36,6 +36,8 @@ namespace Scripts.Game.Player.Movement
             }
             private set => _isGrounded = value;
         }
+        
+        public Vector2 Gravity { get; internal set; } = new Vector2(0, -50);
 
         private Vector2 _velocity;
 
@@ -112,7 +114,7 @@ namespace Scripts.Game.Player.Movement
             
             if (!IsGrounded)
             {
-                _velocity.y += Physics2D.gravity.y * Time.deltaTime;
+                _velocity.y += Gravity.y * Time.deltaTime;
             }
 
             transform.Translate(translation: _velocity * Time.deltaTime);
@@ -137,10 +139,11 @@ namespace Scripts.Game.Player.Movement
 
                 // Skip if we are no longer overlapping with this collider. (could be pushed out already)
                 if (!__colliderDistance.isOverlapped) continue;
-            
-                transform.Translate(translation: __colliderDistance.pointA - __colliderDistance.pointB);
 
-                bool __colliderBeneathUs = (__colliderDistance.normal.AngleTo(Vector2.up) < 90);
+                Transform __transform;
+                (__transform = transform).Translate(translation: __colliderDistance.pointA - __colliderDistance.pointB);
+
+                bool __colliderBeneathUs = (__colliderDistance.normal.AngleTo(__transform.up) < 90);
                 bool __notJumping = (_velocity.y < 0);
             
                 if(__colliderBeneathUs && __notJumping)
@@ -159,7 +162,7 @@ namespace Scripts.Game.Player.Movement
                 origin: __playerBounds.center, 
                 size: __playerBounds.size, 
                 angle: 0, 
-                direction: Vector2.down, 
+                direction: -transform.up, 
                 distance: (0.01f), 
                 layerMask: groundLayer);
 

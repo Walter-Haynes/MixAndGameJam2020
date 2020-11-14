@@ -44,6 +44,14 @@
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Flip",
+                    "type": "Button",
+                    "id": "79d343c7-2f4a-4501-b253-2f9f00ac6c62",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -123,6 +131,28 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "fe22d9d1-6467-4cb0-a444-4a151c00e54b",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd902003-0eee-4631-8a63-98a5a66ffe42",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -57,6 +57,14 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Flip"",
+                    ""type"": ""Button"",
+                    ""id"": ""79d343c7-2f4a-4501-b253-2f9f00ac6c62"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -136,6 +144,28 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fe22d9d1-6467-4cb0-a444-4a151c00e54b"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Flip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fd902003-0eee-4631-8a63-98a5a66ffe42"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Flip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -149,6 +179,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Duck = m_Gameplay.FindAction("Duck", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
+        m_Gameplay_Flip = m_Gameplay.FindAction("Flip", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -203,6 +234,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_Duck;
     private readonly InputAction m_Gameplay_Movement;
+    private readonly InputAction m_Gameplay_Flip;
     public struct GameplayActions
     {
         private @PlayerInputs m_Wrapper;
@@ -212,6 +244,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @Duck => m_Wrapper.m_Gameplay_Duck;
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
+        public InputAction @Flip => m_Wrapper.m_Gameplay_Flip;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -236,6 +269,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Movement.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
+                @Flip.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFlip;
+                @Flip.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFlip;
+                @Flip.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFlip;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -255,6 +291,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Flip.started += instance.OnFlip;
+                @Flip.performed += instance.OnFlip;
+                @Flip.canceled += instance.OnFlip;
             }
         }
     }
@@ -266,5 +305,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnDuck(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
+        void OnFlip(InputAction.CallbackContext context);
     }
 }

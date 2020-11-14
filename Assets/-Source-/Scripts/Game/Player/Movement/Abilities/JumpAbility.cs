@@ -47,7 +47,7 @@ namespace Scripts.Game.Player.Movement
 			if (!Player.IsGrounded) return false;
 
 			// Calculate the velocity required to achieve the target jump height.
-			float __jumpSpeed = Mathf.Sqrt(f: 2 * jumpHeight * Physics2D.gravity.y.Abs());
+			float __jumpSpeed = Mathf.Sqrt(f: 2 * jumpHeight * Player.Gravity.y.Abs());
 			Player.Move(y: __jumpSpeed);
 			
 			return true;
