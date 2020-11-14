@@ -26,7 +26,7 @@ namespace Generation
         // List of all tile types and their pools
         private Dictionary<ENVIRONMENT_TYPE, List<Pooler>> tilePools;
 
-        private void Awake() {
+        public void InitializeGrid() {
             InstantiateObjects();
             GenerateGrid();
         }
