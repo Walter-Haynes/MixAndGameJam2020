@@ -1,6 +1,6 @@
 ﻿namespace Scripts.Game.Enemies
 {
-    public class ShootEnemy : BaseEnemy
+    public sealed class ShootEnemy : BaseEnemy
     {
 
     }
