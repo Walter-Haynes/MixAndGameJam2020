@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 
 using UnityEngine;
 
@@ -10,15 +8,24 @@ using Scripts.Utilities;
 
 public class TempBeatThing : SingletonMonoBehaviour<TempBeatThing>
 {
-    [SerializeField] private float bpm = 133;
+    [SerializeField] private float bpm = 115;
 
-    private float BeatsPerSecond => (bpm / 60);
-    private float TimeBetweenFullBeats => (1.0f / BeatsPerSecond); //in seconds.
-    private float TimeBetweenHalfBeats => (TimeBetweenFullBeats / 2f);
-    private float TimeBetweenQuartBeats => (TimeBetweenHalfBeats / 2f);
+    [PublicAPI]
+    public float BeatsPerMinute => bpm;
+    [PublicAPI]
+    public float BeatsPerSecond => (bpm / 60.0f);
+    [PublicAPI]
+    public float TimeBetweenFullBeats => (1.0f / BeatsPerSecond); //in seconds.
+    [PublicAPI]
+    public float TimeBetweenHalfBeats => (TimeBetweenFullBeats / 2f);
+    [PublicAPI]
+    public float TimeBetweenQuartBeats => (TimeBetweenHalfBeats / 2f);
 
     private float _fullBeatTimer, _halfBeatTimer, _quartBeatTimer;
     private int _fullBeats, _halfBeats, _quartBeats;
+
+    [PublicAPI]
+    public float PerBeatToPerSecond => TimeBetweenFullBeats;
 
     [PublicAPI]
     public event Action<int> OnFullBeat;

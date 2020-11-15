@@ -13,8 +13,31 @@
             </e>
           </e>
           <e p="Scripts" t="Include">
+            <e p="Audio" t="Include">
+              <e p="AudioSpectrum.cs" t="Include" />
+              <e p="AudioSyncer.cs" t="Include" />
+              <e p="AudioSyncScale.cs" t="Include" />
+              <e p="BeatDetection.cs" t="Include" />
+              <e p="BeatManager.cs" t="Include" />
+              <e p="Game.Audio.asmdef" t="Include" />
+              <e p="Singleton.cs" t="Include" />
+            </e>
+            <e p="Environment" t="Include">
+              <e p="EnvironmentGenerator.cs" t="Include" />
+              <e p="EnvironmentSettings.cs" t="Include" />
+              <e p="Pooler.cs" t="Include" />
+            </e>
             <e p="Game" t="Include">
+              <e p="Enemies" t="Include">
+                <e p="[BaseEnemy].cs" t="Include" />
+                <e p="[EnemyAction].cs" t="Include" />
+                <e p="Bullet.cs" t="Include" />
+                <e p="ScaleAction.cs" t="Include" />
+                <e p="ShootBulletAction.cs" t="Include" />
+                <e p="ShootEnemy.cs" t="Include" />
+              </e>
               <e p="Game.Core.asmdef" t="Include" />
+              <e p="IDamagable.cs" t="Include" />
               <e p="Player" t="Include">
                 <e p="Movement" t="Include">
                   <e p="Abilities" t="Include">
@@ -29,9 +52,12 @@
                   <e p="PlayerController2D.cs" t="Include" />
                 </e>
               </e>
+              <e p="TempBeatThing.cs" t="Include" />
             </e>
+            <e p="GameManager.cs" t="Include" />
             <e p="Utilities" t="Include">
               <e p="MathUtils.cs" t="Include" />
+              <e p="SingletonLazyMonoBehaviour.cs" t="Include" />
               <e p="SingletonMonoBehaviour.cs" t="Include" />
               <e p="SingletonScriptableObject.cs" t="Include" />
               <e p="Utilities.asmdef" t="Include" />
@@ -240,6 +266,87 @@
           </e>
         </e>
         <e p="Ludiq" t="Include">
+          <e p="Assemblies" t="Include">
+            <e p="Bolt.Core.Editor.xml" t="Include" />
+            <e p="Bolt.Core.Runtime.xml" t="Include" />
+            <e p="Bolt.Flow.Editor.xml" t="Include" />
+            <e p="Bolt.Flow.Runtime.xml" t="Include" />
+            <e p="Bolt.State.Editor.xml" t="Include" />
+            <e p="Bolt.State.Runtime.xml" t="Include" />
+            <e p="Ionic.Zip.xml" t="Include" />
+            <e p="Ludiq.Core.Editor.xml" t="Include" />
+            <e p="Ludiq.Core.Runtime.xml" t="Include" />
+            <e p="Ludiq.Graphs.Editor.xml" t="Include" />
+            <e p="Ludiq.Graphs.Runtime.xml" t="Include" />
+            <e p="Ludiq.Platforms.xml" t="Include" />
+            <e p="MiscUtil.xml" t="Include" />
+            <e p="YamlDotNet.xml" t="Include" />
+          </e>
+          <e p="Bolt" t="Include">
+            <e p="Documentation" t="Include">
+              <e p="0. READ ME FIRST.txt" t="Include" />
+            </e>
+            <e p="LICENSES.txt" t="Include" />
+          </e>
+          <e p="Ludiq.Core" t="Include">
+            <e p="DotNetDocumentation" t="Include">
+              <e p="Microsoft.Build.Conversion.v3.5.xml" t="Include" />
+              <e p="Microsoft.Build.Engine.xml" t="Include" />
+              <e p="Microsoft.Build.Framework.xml" t="Include" />
+              <e p="Microsoft.Build.Utilities.v3.5.xml" t="Include" />
+              <e p="Microsoft.VisualC.STLCLR.xml" t="Include" />
+              <e p="mscorlib.xml" t="Include" />
+              <e p="System.AddIn.Contract.xml" t="Include" />
+              <e p="System.AddIn.xml" t="Include" />
+              <e p="System.ComponentModel.DataAnnotations.xml" t="Include" />
+              <e p="System.Configuration.Install.xml" t="Include" />
+              <e p="System.Configuration.xml" t="Include" />
+              <e p="System.Core.xml" t="Include" />
+              <e p="System.Data.DataSetExtensions.xml" t="Include" />
+              <e p="System.Data.Entity.Design.xml" t="Include" />
+              <e p="System.Data.Entity.xml" t="Include" />
+              <e p="System.Data.Linq.xml" t="Include" />
+              <e p="System.Data.Services.Client.xml" t="Include" />
+              <e p="System.Data.Services.Design.xml" t="Include" />
+              <e p="System.Data.Services.xml" t="Include" />
+              <e p="System.Data.SqlXml.xml" t="Include" />
+              <e p="System.Data.xml" t="Include" />
+              <e p="System.Deployment.xml" t="Include" />
+              <e p="System.DirectoryServices.AccountManagement.xml" t="Include" />
+              <e p="System.DirectoryServices.xml" t="Include" />
+              <e p="System.Drawing.xml" t="Include" />
+              <e p="System.EnterpriseServices.xml" t="Include" />
+              <e p="System.IdentityModel.xml" t="Include" />
+              <e p="System.Management.Instrumentation.xml" t="Include" />
+              <e p="System.Management.xml" t="Include" />
+              <e p="System.Messaging.xml" t="Include" />
+              <e p="System.Net.xml" t="Include" />
+              <e p="System.Printing.xml" t="Include" />
+              <e p="System.Runtime.Remoting.xml" t="Include" />
+              <e p="System.Runtime.Serialization.Formatters.Soap.xml" t="Include" />
+              <e p="System.Runtime.Serialization.xml" t="Include" />
+              <e p="System.Security.xml" t="Include" />
+              <e p="System.ServiceModel.Web.xml" t="Include" />
+              <e p="System.ServiceModel.xml" t="Include" />
+              <e p="System.ServiceProcess.xml" t="Include" />
+              <e p="System.Transactions.xml" t="Include" />
+              <e p="System.Web.Abstractions.xml" t="Include" />
+              <e p="System.Web.DynamicData.Design.xml" t="Include" />
+              <e p="System.Web.DynamicData.xml" t="Include" />
+              <e p="System.Web.Entity.Design.xml" t="Include" />
+              <e p="System.Web.Entity.xml" t="Include" />
+              <e p="System.Web.Extensions.Design.xml" t="Include" />
+              <e p="System.Web.Extensions.xml" t="Include" />
+              <e p="System.Web.Routing.xml" t="Include" />
+              <e p="System.Web.Services.xml" t="Include" />
+              <e p="System.Windows.Forms.xml" t="Include" />
+              <e p="System.Windows.Presentation.xml" t="Include" />
+              <e p="System.WorkflowServices.xml" t="Include" />
+              <e p="System.xml" t="Include" />
+              <e p="System.Xml.Linq.xml" t="Include" />
+              <e p="System.Xml.xml" t="Include" />
+            </e>
+          </e>
           <e p="Ludiq.Peek" t="Include">
             <e p="Editor" t="Include">
               <e p="Context" t="Include">
@@ -1963,6 +2070,7 @@
       </e>
       <e p="ExecutionOrderAttributes.csproj" t="IncludeRecursive" />
       <e p="ExecutionOrderAttributes.Editor.csproj" t="IncludeRecursive" />
+      <e p="Game.Audio.csproj" t="IncludeRecursive" />
       <e p="Game.Core.csproj" t="IncludeRecursive" />
       <e p="GameSettings.csproj" t="IncludeRecursive" />
       <e p="InputSystem.Samples.Visualizers.csproj" t="IncludeRecursive" />

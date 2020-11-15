@@ -4,16 +4,24 @@ using Sirenix.OdinInspector;
 
 namespace Scripts.Game.Enemies
 {
-	public class BaseEnemy : MonoBehaviour
+	public abstract class BaseEnemy : MonoBehaviour
 	{
+		[BoxGroup]
 		[InlineEditor]
 		[SerializeField] protected EnemyAction[] enemyActions;
+
+		[BoxGroup]
+		[SceneObjectsOnly] 
+		[SerializeField] internal Transform visuals; 
 
 		protected void Start()
 		{
 			foreach (EnemyAction __action in enemyActions)
 			{
-				__action.Initialize();
+				if(__action != null)
+				{
+					__action.Initialize(enemy: this);	
+				}
 			}
 		}
 	}

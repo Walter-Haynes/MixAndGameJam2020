@@ -31,273 +31,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5faf068a-516a-4611-91a8-ad6a09e3bead" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Animations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Camera.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Camera/Gizmos.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Camera/Gizmos/Cinemachine.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Models.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Background.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Background/Background.fbm.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Dude.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Sounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/TestScene.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Textures/Paper.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/UI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/SequencingDemo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/SequencingDemo/DemoSequences.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/SequencingDemo/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/SequencingDemo/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/SequencingDemo/SequencerDemo_Profiles.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/SequencingDemo/Sounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/SequencingDemo/Sounds/Kit.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/SequencingDemo/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/SequencingDemo/Textures/wip.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Editor/Core.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Editor/Curves.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Editor/DefineSymbols.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Editor/Sequencing.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Editor/Sequencing/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Editor/Shakers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacks.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacks/Core.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacks/Core/ObjectPool.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacks/Feedbacks.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacks/Feel.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacks/Sequencing.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacks/Sequencing/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacks/Shakers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/Cinemachine.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/Cinemachine/Feedbacks.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/Cinemachine/Shakers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/MMTools.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/MMTools/MMRadio.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/NiceVibrations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/NiceVibrations/Feedbacks.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/PostProcessing.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/PostProcessing/Feedbacks.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/PostProcessing/Helpers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/PostProcessing/Shakers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/URP.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/URP/Feedbacks.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/URP/Helpers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/MMFeedbacksForThirdParty/URP/Shakers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/AI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Achievements.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Activation.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Attributes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Audio.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Audio/AudioAnalyzer.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Audio/Playlist.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Camera.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Collisions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Curves.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Curves/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/DefineSymbols.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/GUI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Icons.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/MMRadio.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/MMTween.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Maintenance.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Movement.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Movement/MMPathMovement.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/ObjectBounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Particles.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/PropertyControllers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/ReorderableList.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Utilities.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Editor/Vision.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/AI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Activation.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Animation.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Audio.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Audio/AudioAnalyzer.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Audio/Playlist.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Camera.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Events.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/GUI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/GUI/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/GUI/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Gameplay.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Gyroscope.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Icons.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMAchievements.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMAchievements/Fonts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMAchievements/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMAchievements/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMAchievements/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMAchievements/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMAttributes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMControls.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMControls/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugMenu.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugMenu/Demo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugMenu/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugMenu/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugMenu/Scripts/Commands.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugMenu/Scripts/Events.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugMenu/Scripts/MMDebugMenuItems.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugMenu/Scripts/Tabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugMenu/Scripts/UIClasses.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugMenu/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugOnScreen.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugOnScreen/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMDebugOnScreen/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMExtensions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMHelpers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMObservable.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMPrototypeTextures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMPrototypeTextures/Demo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMPrototypeTextures/MMBRP_Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMPrototypeTextures/MMBRP_Materials/Neutral.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMPrototypeTextures/MMBRP_Materials/Skybox.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMPrototypeTextures/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMPrototypeTextures/Textures/MMCheckers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMPrototypeTextures/Textures/MMPlastic.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMPrototypeTextures/Textures/MMProtoTextures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMRadio.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMRadio/MMProperty.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMRadio/MMProperty/MMPropertyLink.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMRadio/MMProperty/MMPropertyPicker.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMRadio/MMRadioSignal.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMSaveLoad.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMSingletons.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMTween.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMTween/Demo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMTween/Demo/Camera.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMTween/Demo/Fonts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMTween/Demo/Fonts/Lato.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMTween/Demo/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMTween/Demo/Plotter.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMTween/Demo/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/MMTween/Demo/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Movement.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Movement/Demo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Movement/MMPathMovement.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/ObjectBounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/ObjectPool.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Particles.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Performance.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Physics.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/PropertyControllers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/ReorderableList.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/ReorderableList/Attributes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/SceneLoading.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/SceneLoading/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Shaders.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Sprites/BezierLineRenderer.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/StateMachine.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Tilemaps.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Time.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Utilities.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/VFX.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/VFX/MMBloomDirt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/VFX/MMBrushes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/VFX/MMNoise.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/VFX/MMPalette.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/VFX/MMRamps.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/VFX/MMRipple.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/VFX/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/Tools/Vision.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/ToolsForCinemachine.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/ToolsForCinemachine/Camera.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/ToolsForMMFeedbacks.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/ToolsForMMFeedbacks/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/ToolsForMMFeedbacks/Tools.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/ToolsForMMFeedbacks/Tools/Achievements.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/ToolsForMMFeedbacks/Tools/Camera.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMTools/ToolsForMMFeedbacks/Tools/Movement.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Plugins.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Plugins/Android.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Plugins/iOS.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Plugins/iOS/Swift.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Scripts/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Scripts/Editor/DefineSymbols.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Scripts/Haptics.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Scripts/NiceVibrations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Scripts/Rumble.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Scripts/Rumble/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Scripts/Rumble/Editor/DefineSymbols.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Scripts/Rumble/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Common/Sounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Animations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/BallDemo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/BallDemo/Physics2DMaterials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/BallDemo/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/BallDemo/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/CarDemo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/CarDemo/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/CarDemo/Sounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/CarDemo/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/ContinuousDemo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/ContinuousDemo/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/RegularPresetsDemo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/RegularPresetsDemo/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/TransientDemo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/TransientDemo/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/WobbleDemo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/WobbleDemo/AHAP.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/WobbleDemo/Animations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/WobbleDemo/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/WobbleDemo/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/DemoAssets/WobbleDemo/Sounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/_Common.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/_Common/Fonts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/_Common/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/_Common/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/_Common/Scripts/UI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/_Common/Shaders.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/_Common/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/_OLD.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/_OLD/v1Demo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/_OLD/v1Demo/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/Demos/_OLD/v1Demo/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/OlderVersions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/OlderVersions/v1.7.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/OlderVersions/v1.7/NiceVibrations-v-1-7.unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/OlderVersions/v2.0.1.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/OlderVersions/v2.0.1/NiceVibrations-v-2-0-1.unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/ThirdParty.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/NiceVibrations/ThirdParty/Newtonsoft.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Bullet.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Bullet.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Audio.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Bullet.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Bullet.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ScaleAction.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ScaleAction.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootBulletAction.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootBulletAction.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootBulletAction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootBulletAction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootEnemy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootEnemy.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonLazyMonoBehaviour.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonLazyMonoBehaviour.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/Source.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/Source/RainbowCore.src.unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Source.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Source/RainbowFolders.src.unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Drawers.unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Editor Windows.unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources/Sirenix.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources/Sirenix/GlobalSerializationConfig.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources/Sirenix/GlobalSerializationConfig.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_DemoContent.unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_URP_VolumeSystem.unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MMFeedbacks/MMFeedbacks/Demos/MMFeedbacksDemo/Prefabs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Prefabs/DeleteMe.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Prefabs/DeleteMe.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scenes/Tests/MovementTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scenes/Tests/MovementTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/GravityFlipAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/GravityFlipAbility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/BaseEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/[BaseEnemy].cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/BaseEnemy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/[BaseEnemy].cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/EnemyAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/[EnemyAction].cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/EnemyAction.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/[EnemyAction].cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ScaleAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ScaleAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Game.Core.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Game.Core.asmdef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/WalkAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/WalkAbility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/CharacterController2D.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/CharacterController2D.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/TempBeatThing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/TempBeatThing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/MathUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/MathUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MMFeedbacks.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MMFeedbacks.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonMonoBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonMonoBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonMonoBehaviour.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MMFeedbacks.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Enemies.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Japan1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Japan1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,14 +94,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/MathUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerAbility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/JumpAbility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/MathUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/JumpAbility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/UtilsGeneral.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Bezier.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/TempBeatThing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootBulletAction.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -339,10 +129,22 @@
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/SideJumpAbility.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/CharacterController2D.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/GravityFlipAbility.cs" />
-        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" />
-        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/WalkAbility.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Bezier.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/WalkAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonLazyMonoBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonMonoBehaviour1.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Audio/BeatDetection.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/EnemyAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/BaseEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ScaleAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/[BaseEnemy].cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/MathUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootBulletAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/TempBeatThing.cs" />
       </list>
     </option>
   </component>
@@ -390,7 +192,7 @@
       <updated>1605310221894</updated>
       <workItem from="1605310274565" duration="35166000" />
       <workItem from="1605383846043" duration="1352000" />
-      <workItem from="1605385270324" duration="8109000" />
+      <workItem from="1605385270324" duration="20346000" />
     </task>
     <servers />
   </component>
@@ -413,5 +215,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="92" y="92" width="2376" height="1216" key="VCS.FileHistoryDialog" timestamp="1605435644287">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="VCS.FileHistoryDialog/-1920.666.1920.1040/2560.-435.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1605435644287" />
   </component>
 </project>

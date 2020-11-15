@@ -4,6 +4,7 @@ using UnityEngine;
 using JetBrains.Annotations;
 
 using Lean.Transition;
+using Sirenix.OdinInspector;
 
 namespace Scripts.Game.Enemies
 {
@@ -11,12 +12,11 @@ namespace Scripts.Game.Enemies
     {
 
         #region Fields
-
-		[Tooltip("Which type of Beat to react on (Full/Half/Quart)")]
+		[BoxGroup("React"), Tooltip("Which type of Beat to react on (Full/Half/Quart)")]
         [SerializeField] protected BeatType beatType;
 
-        [Tooltip("React every Nth Full/Half/Quart Beat")]
-        [SerializeField] protected int reactEvery = 4;
+		[BoxGroup("React"), Tooltip("React every Nth Full/Half/Quart Beat")]
+        [SerializeField] protected int reactEvery = 1;
 
         //private BeatDetection _beatDetectorCache;
         //private BeatDetection BeatDetector => _beatDetectorCache = (_beatDetectorCache ? _beatDetectorCache : FindObjectOfType<BeatDetection>());
@@ -42,8 +42,10 @@ namespace Scripts.Game.Enemies
         }
 
 		[PublicAPI]
-        public virtual void Initialize()
-        {
+        public virtual void Initialize(in BaseEnemy enemy)
+		{
+			Enemy = enemy;
+			
             switch (beatType)
             {
 				case BeatType.Full:
