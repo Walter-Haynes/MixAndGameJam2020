@@ -19,8 +19,9 @@ namespace Scripts.Game.Player.Movement.Abilities
 		private bool _wannaWalkLeft = false, _wannaWalkRight = false;
 		[UsedImplicitly]
 		private bool _wannaJump = false;
-
 		private bool WannaWalk => (_wannaWalkLeft || _wannaWalkRight);
+
+		private bool CanJump => (Player.IsGrounded);
 
 		// public delegate void PlayerMoved(); 
         // private PlayerMoved playerMovedDelegate;
@@ -39,7 +40,7 @@ namespace Scripts.Game.Player.Movement.Abilities
 
 		internal override void AbilityFixedUpdate()
 		{
-			if (!_wannaJump)
+			if(!_wannaJump)
 			{
 				if(WannaWalk)
 				{
@@ -60,31 +61,16 @@ namespace Scripts.Game.Player.Movement.Abilities
 		{
 			//TODO: (Walter) Beat check.
 
-			if(!Player.IsGrounded) return false;
-			
-			Vector3 __playerStartPos = Player.transform.position;
+			if(!CanJump) return false;
 
 			(bool __canHop, Vector3 __targetPos) = GetNextPos();
 
 			if (!__canHop) return false;
 
 			transform.positionTransition(position: __targetPos, duration: hopDuration, ease: LeanEase.Smooth);
-			
-			
-			/*
-			if (_wannaWalkLeft)
-			{
-				transform.localPositionTransition_X(position: __playerStartPos.x - 1, duration: hopDuration);
-			}
-			else
-			{
-				transform.localPositionTransition_X(position: __playerStartPos.x + 1, duration: hopDuration);
-			}
-			*/
 
 			Vector3 __visualsStartPos = Player.visuals.localPosition;
-			//float __hopY = hopHeight * (Player.HasNormalGravity ? 1 : -1);
-			
+
 			//hop
 			Player.visuals
 				.localPositionTransition_Y(position: __visualsStartPos.y + hopHeight, duration: hopDuration / 2.0f, ease: LeanEase.SineOut)
