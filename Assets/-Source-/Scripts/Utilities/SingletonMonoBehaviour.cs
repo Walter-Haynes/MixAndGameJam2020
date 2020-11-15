@@ -1,27 +1,48 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+
 using JetBrains.Annotations;
 
 namespace Scripts.Utilities
 {
-	/// <summary>
-	/// Lazy Singleton based on this: https://blog.mzikmund.com/2019/01/a-modern-singleton-in-unity/
-	/// </summary>
-	/// <typeparam name="T"></typeparam>
 	public abstract class SingletonMonoBehaviour<T> : MonoBehaviour 
 		where T : SingletonMonoBehaviour<T>
 	{
-		private static readonly Lazy<T> LazyInstance = new Lazy<T>(CreateSingleton);
+		#region Fields & Properties
 
+		private static T _instance = null;
+		
 		[PublicAPI]
-		public static T Instance => LazyInstance.Value;
-
-		private static T CreateSingleton()
+		public static T Instance
 		{
-			GameObject __ownerObject = new GameObject(name: $"[{typeof(T).Name}]");
-			T __instance = __ownerObject.AddComponent<T>();
-			DontDestroyOnLoad(__ownerObject);
-			return __instance;
+			get => _instance = InstanceExists ? _instance : FindObjectOfType<T>();
+			protected set => _instance = value;
 		}
+		
+		[PublicAPI]
+		public static bool InstanceExists => (_instance != null);
+
+		#endregion
+
+		#region Methods
+		
+		protected virtual void OnEnable()
+		{
+			if(InstanceExists)
+			{
+				Destroy(Instance.gameObject);
+			}
+			
+			Instance = (T)this;
+		}
+		
+		protected virtual void OnDisable()
+		{
+			if(Instance == this)
+			{
+				Instance = null;
+			}
+		}
+
+		#endregion
 	}
 }

@@ -5,8 +5,10 @@ using JetBrains.Annotations;
 
 namespace Scripts.Game.Player.Movement
 {
+    using Utilities;
+    
     [RequireComponent(typeof(BoxCollider2D))]
-    public sealed class PlayerController2D : MonoBehaviour
+    public sealed class PlayerController2D : SingletonMonoBehaviour<PlayerController2D>
     {
         #region Fields
 
@@ -59,28 +61,27 @@ namespace Scripts.Game.Player.Movement
         [PublicAPI]
         public bool HasNormalGravity => (Gravity.y < 0);
 
-        ///// <summary> Player is not moving up (So it's either standing still, or falling) </summary>
-        //private bool NotJumping => HasNormalGravity ? (_movement.y < 0) : (_movement.y > 0);
-
         #endregion
 
         #region Methods
 
+        private BoxCollider2D _boxColliderCache;
+        private Rigidbody2D   _rigidbody2DCache;
         private void Awake()
         {
             if (boxCollider == null)
             {
-                if(TryGetComponent(component: out BoxCollider2D __result))
+                if(TryGetComponent(component: out _boxColliderCache))
                 {
-                    boxCollider = __result;
+                    boxCollider = _boxColliderCache;
                 }   
             }
 
             if (_rigidbody2D == null)
             {
-                if(TryGetComponent(component: out Rigidbody2D __result))
+                if(TryGetComponent(component: out _rigidbody2DCache))
                 {
-                    _rigidbody2D = __result;
+                    _rigidbody2D = _rigidbody2DCache;
                 }   
             }
             
@@ -107,9 +108,20 @@ namespace Scripts.Game.Player.Movement
             _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
-        private void OnEnable() => InputActions.Enable();
-        private void OnDisable() => InputActions.Disable();
+        private void OnEnable()
+        {
+            base.OnEnable();
+            InputActions.Enable();
+        }
 
+        private void OnDisable()
+        {
+            base.OnDisable();
+            InputActions.Disable();
+        }
+
+        #region Move Call API
+        
         [PublicAPI]
         public void Move(in Vector2 velocity)
         {
@@ -134,11 +146,11 @@ namespace Scripts.Game.Player.Movement
                 Move(velocity: new Vector2(x: (float)x, y: (float)y)); 
             }
         }
-        
+
+        #endregion
+
         private void FixedUpdate()
         {
-            //visuals.GetComponent<SpriteRenderer>().color = IsGrounded ? Color.green : Color.yellow; 
-
             foreach (PlayerAbility __ability in Abilities)
             {
                 __ability.AbilityFixedUpdate();
@@ -157,11 +169,11 @@ namespace Scripts.Game.Player.Movement
         {
             float __distance = velocity.magnitude;
 
-            if (__distance > MIN_MOVE_DISTANCE)
+            if(__distance > MIN_MOVE_DISTANCE)
             {
                 int __hits = _rigidbody2D.Cast(direction: velocity.normalized, results: _hitBuffer, distance: __distance + skinWidth);
 
-                for (int __index = 0; __index < __hits; __index++)
+                for(int __index = 0; __index < __hits; __index++)
                 {
                     RaycastHit2D __hit = _hitBuffer[__index];
                     Debug.DrawRay(__hit.point, __hit.normal);
@@ -172,7 +184,6 @@ namespace Scripts.Game.Player.Movement
             }
 
             _rigidbody2D.position += velocity.normalized * __distance;
-
         }
 
         private void OnDrawGizmos()
