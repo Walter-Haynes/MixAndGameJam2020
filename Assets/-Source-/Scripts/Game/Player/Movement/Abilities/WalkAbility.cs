@@ -12,7 +12,8 @@ namespace Scripts.Game.Player.Movement.Abilities
 	{
 		#region Fields
 
-		[SerializeField] private float hopDuration = 0.05f;
+		[SerializeField] private float hopDuration = 0.15f;
+		[SerializeField] private float hopHeight = 0.3f;
 
 		[UsedImplicitly]
 		private bool _wannaWalkLeft = false, _wannaWalkRight = false;
@@ -61,8 +62,16 @@ namespace Scripts.Game.Player.Movement.Abilities
 
 			if(!Player.IsGrounded) return false;
 			
-			Vector3 __playerStartPos = Player.transform.localPosition;
+			Vector3 __playerStartPos = Player.transform.position;
+
+			(bool __canHop, Vector3 __targetPos) = GetNextPos();
+
+			if (!__canHop) return false;
+
+			transform.positionTransition(position: __targetPos, duration: hopDuration, ease: LeanEase.Smooth);
 			
+			
+			/*
 			if (_wannaWalkLeft)
 			{
 				transform.localPositionTransition_X(position: __playerStartPos.x - 1, duration: hopDuration);
@@ -71,16 +80,35 @@ namespace Scripts.Game.Player.Movement.Abilities
 			{
 				transform.localPositionTransition_X(position: __playerStartPos.x + 1, duration: hopDuration);
 			}
+			*/
 
 			Vector3 __visualsStartPos = Player.visuals.localPosition;
-			float __hopY = 0.25f * (Player.HasNormalGravity ? 1 : -1);
+			//float __hopY = hopHeight * (Player.HasNormalGravity ? 1 : -1);
+			
 			//hop
 			Player.visuals
-				.localPositionTransition_Y(position: __visualsStartPos.y + __hopY, duration: hopDuration / 2.0f, ease: LeanEase.SineOut)
+				.localPositionTransition_Y(position: __visualsStartPos.y + hopHeight, duration: hopDuration / 2.0f, ease: LeanEase.SineOut)
 				.JoinTransition()
-				.localPositionTransition_Y(position: __visualsStartPos.y,          duration: hopDuration / 2.0f, ease: LeanEase.SineOut);
+				.localPositionTransition_Y(position: __visualsStartPos.y,             duration: hopDuration / 2.0f, ease: LeanEase.SineOut);
 
 			return true;
+		}
+
+		private (bool canHop, Vector3 targetPos) GetNextPos()
+		{
+			Vector3 __checkPos = Player.transform.position;
+			__checkPos.x += _wannaWalkLeft ? -1 : 1;
+			
+			Collider2D __isOccupied = Physics2D.OverlapCircle(point: __checkPos, radius: 0.15f);
+
+			if(__isOccupied)
+			{
+				__checkPos.y += Player.HasNormalGravity ? 1 : -1;
+				
+				__isOccupied = Physics2D.OverlapCircle(point: __checkPos, radius: 0.15f);
+			}
+
+			return (canHop: !__isOccupied, __checkPos);
 		}
 
 		#endregion

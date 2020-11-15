@@ -46,7 +46,9 @@ namespace Scripts.Game.Player.Movement.Abilities
 
 			Vector3 __currentRotation = Player.transform.rotation.eulerAngles;
 			Player.transform.rotation = Quaternion.Euler(__currentRotation.x, __currentRotation.y, __currentRotation.z + 180);
-			Player.IsGrounded = false;
+			//Player.IsGrounded = false;
+			
+			Player.Move(y: 0.1f);
 
 			return true;
 		}

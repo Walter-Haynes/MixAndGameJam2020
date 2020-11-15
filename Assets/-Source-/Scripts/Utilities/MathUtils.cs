@@ -24,5 +24,19 @@ namespace Scripts.Utilities
 		[PublicAPI]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static float AngleTo(this Vector2 from, in Vector2 to) => Vector2.Angle(from, to);
+		
+		[PublicAPI]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static float NormalToAngle(this Vector2 normal) => Mathf.Abs(Mathf.Atan2(normal.x, normal.y) * Mathf.Rad2Deg);
+		
+		[PublicAPI]
+		public static Vector2 Parabola(in Vector2 start, in Vector2 stop, float height, in float percentage)
+		{
+			float __Func(float t) => -4 * height * t * t + 4 * height * t;
+
+			Vector2 __midPoint = Vector2.Lerp(start, stop, percentage);
+
+			return new Vector2(__midPoint.x, y: __Func(percentage) + Mathf.Lerp(start.y, stop.y, percentage));
+		}
 	}
 }
