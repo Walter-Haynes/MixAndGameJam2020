@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 using JetBrains.Annotations;
-using Sirenix.OdinInspector;
 
 namespace Scripts.Game.Player.Movement
 {
-    using Utilities;
-    
     [RequireComponent(typeof(BoxCollider2D))]
     public sealed class PlayerController2D : MonoBehaviour
     {
@@ -63,8 +59,8 @@ namespace Scripts.Game.Player.Movement
         [PublicAPI]
         public bool HasNormalGravity => (Gravity.y < 0);
 
-        /// <summary> Player is not moving up (So it's either standing still, or falling) </summary>
-        private bool NotJumping => HasNormalGravity ? (_movement.y < 0) : (_movement.y > 0);
+        ///// <summary> Player is not moving up (So it's either standing still, or falling) </summary>
+        //private bool NotJumping => HasNormalGravity ? (_movement.y < 0) : (_movement.y > 0);
 
         #endregion
 
