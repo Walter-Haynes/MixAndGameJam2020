@@ -142,7 +142,7 @@ namespace Generation
                 // While previous was obstacle and current is obstacle
                 bool previousEmpty = (isObstacleTile.ContainsKey(previousGeneratedObject));
                 bool previouspreviousEmpty = (isObstacleTile.ContainsKey(previouspreviousGeneratedObject));
-                Debug.Log(env.name + " "  + previousEmpty + " " + previouspreviousEmpty);
+                // Debug.Log(env.name + " "  + previousEmpty + " " + previouspreviousEmpty);
                 while (isObstacleTile.ContainsKey(env.name)
                         && (previousEmpty || previouspreviousEmpty)) {
                     randomNumber = GetRandomNumber(startingPools.Count);

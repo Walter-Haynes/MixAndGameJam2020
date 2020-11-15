@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5070088346121741077}
   - component: {fileID: 5070088346121741083}
   - component: {fileID: 5070088346121741076}
+  - component: {fileID: 6382295367806557614}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Untagged
@@ -74,6 +75,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &6382295367806557614
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070088346121741079}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5070088347448467625
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +166,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0c06d58263536c84d8baf6db84dec887, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b0a6bc822a2af5479e829d7a6d68a2a, type: 3}
   m_Color: {r: 1, g: 0.5481836, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0

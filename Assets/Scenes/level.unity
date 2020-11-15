@@ -160,6 +160,7 @@ MonoBehaviour:
   obstacles:
   - {fileID: 4102294431260585840, guid: 4170d8d640496fe40b88690fb7eb7ae8, type: 3}
   - {fileID: 3189555286185345127, guid: 7c3a6cf985fab754ca6dd9a64254e46d, type: 3}
+  - {fileID: 5070088346121741079, guid: 813742c60ad0746428b4805192472aa3, type: 3}
   totalTileCount: 10
   totalPrefabCount: 4
   topFloorOffset: 25
@@ -453,6 +454,7 @@ GameObject:
   - component: {fileID: 1307662772}
   - component: {fileID: 1307662771}
   - component: {fileID: 1307662774}
+  - component: {fileID: 1307662775}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -606,6 +608,19 @@ MonoBehaviour:
   timeStepQuarter: 0.0375
   timeToBeatQuarter: 0.0125
   restSmoothTimeQuarter: 0.5
+--- !u!114 &1307662775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307662770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030102e5cd4a9014ba4ec2f7ea18cd25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bpm: 115
 --- !u!1 &1411948264
 GameObject:
   m_ObjectHideFlags: 0
