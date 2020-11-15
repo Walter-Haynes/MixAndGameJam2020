@@ -31,59 +31,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5faf068a-516a-4611-91a8-ad6a09e3bead" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Bullet.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Bullet.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Audio.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Bullet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Bullet.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ScaleAction.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ScaleAction.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootBulletAction.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootBulletAction.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootBulletAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootBulletAction.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootEnemy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootEnemy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonLazyMonoBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonLazyMonoBehaviour.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/Source.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/Source/RainbowCore.src.unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Source.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Source/RainbowFolders.src.unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Drawers.unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Editor Windows.unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources/Sirenix.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources/Sirenix/GlobalSerializationConfig.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources/Sirenix/GlobalSerializationConfig.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_DemoContent.unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_URP_VolumeSystem.unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scenes/Tests/MovementTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scenes/Tests/MovementTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/BaseEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/[BaseEnemy].cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/BaseEnemy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/[BaseEnemy].cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/EnemyAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/[EnemyAction].cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/EnemyAction.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/[EnemyAction].cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ScaleAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ScaleAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Game.Core.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Game.Core.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/WalkAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/WalkAbility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/TempBeatThing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/TempBeatThing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/MathUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/MathUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonMonoBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonMonoBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonMonoBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MMFeedbacks.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Enemies.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Japan1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Japan1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Bullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Bullet.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +50,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/MathUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/PlayerHealth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/JumpAbility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/UtilsGeneral.cs" root0="FORCE_HIGHLIGHTING" />
@@ -139,12 +90,13 @@
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/EnemyAction.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/BaseEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ScaleAction.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/[BaseEnemy].cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/MathUtils.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootBulletAction.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/TempBeatThing.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/PlayerHealth.cs" />
       </list>
     </option>
   </component>
@@ -192,7 +144,7 @@
       <updated>1605310221894</updated>
       <workItem from="1605310274565" duration="35166000" />
       <workItem from="1605383846043" duration="1352000" />
-      <workItem from="1605385270324" duration="20346000" />
+      <workItem from="1605385270324" duration="22468000" />
     </task>
     <servers />
   </component>
