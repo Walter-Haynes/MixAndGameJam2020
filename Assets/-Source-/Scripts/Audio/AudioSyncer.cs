@@ -69,7 +69,7 @@ public class AudioSyncer : MonoBehaviour
     /// </summary>
     /// <param name="value">Current spectrum value</param>
     public virtual void OnBeat(float value, BEAT_TYPE beatType) {
-        Debug.Log("beat " + beatType);
+        // Debug.Log("beat " + beatType);
         timer = 0;
         m_isBeat = true;
     }

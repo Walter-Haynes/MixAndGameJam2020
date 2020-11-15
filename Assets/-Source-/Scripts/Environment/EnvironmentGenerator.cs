@@ -17,16 +17,20 @@ namespace Generation
             [SerializeField, Tooltip("How many gameobjects to spawn per prefab")]
                 private int totalPrefabCount = 4;
         
-        // Currently spawned tiles
-        private List<GameObject> currentTiles;
+        // Currently spawned tiles Tuple
+        // Gameobject tile, the kind of tile, and it's index in the pooler list
+        private Queue<(GameObject, ENVIRONMENT_TYPE, int)> currentTiles;
         // Current environment
         private ENVIRONMENT_TYPE currentEnvironmentType;
-        // Current tracked position on the left end of the tiles
-        private Vector3 currentLeftPosition = Vector3.zero;
+        // Current tracked position on the right end of the tiles
+        private Vector3 currentRightPosition = Vector3.zero;
         // List of all tile types and their pools
         private Dictionary<ENVIRONMENT_TYPE, List<Pooler>> tilePools;
+        // Total length of all the spawned tiles
+        private float currentTileLength = 0f;
 
         public void InitializeGrid() {
+            currentTiles = new Queue<(GameObject, ENVIRONMENT_TYPE, int)>();
             InstantiateObjects();
             GenerateGrid();
         }
@@ -53,17 +57,51 @@ namespace Generation
             return Random.Range(0, range);
         }
 
+        private void SetNewTileTotalLength(float length) {
+            currentTileLength += length;
+        }
+
+        /// <summary>
+        /// Spawn a random new tile with the current ENVIRONMENT_TYPE
+        /// </summary>
         public void GenerateNextTile() {
             List<Pooler> startingPools = tilePools[currentEnvironmentType];
             int randomNumber = GetRandomNumber(startingPools.Count);
             GameObject env = startingPools[randomNumber].GetObject();
-            env.transform.position = currentLeftPosition;
+            env.transform.position = currentRightPosition;
             env.SetActive(true);
-            currentLeftPosition.x += env.GetComponent<BoxCollider>().bounds.size.x;
+            BoxCollider box = env.GetComponent<BoxCollider>();
+            currentRightPosition.x += box.bounds.size.x;
+            currentTiles.Enqueue((env, currentEnvironmentType, randomNumber));
+            SetNewTileTotalLength(box.bounds.size.x);
+        }
+        
+        /// <summary>
+        /// Called when the player advances forward enough
+        /// Will put the last layer (on the leftmost side) in the pool
+        /// and will spawn a new one on the far right.
+        /// TODO: assumes player keeps moving to the right consistently
+        /// </summary>
+        private void UpdateTiles() {
+            (GameObject, ENVIRONMENT_TYPE, int) tile = currentTiles.Dequeue();
+            SetNewTileTotalLength(-1 * tile.Item1.GetComponent<BoxCollider>().bounds.size.x);
+            tilePools[tile.Item2][tile.Item3].ReturnObject(tile.Item1);
+            GenerateNextTile();
         }
 
+        // TODO: implement
         public void SwitchEnvironment() {
             currentEnvironmentType = (ENVIRONMENT_TYPE) GetRandomNumber(tilePools.Count);
+        }
+
+        public void CheckPlayerPosition(float currentPlayerXPosition) {
+            // If player is in the middle of the length of all the tiles then spawn the next one
+            // TODO: can store first item instead of checking each time
+            Vector3 firstTile = currentTiles.Peek().Item1.transform.position; // should use start of collider
+            float length = (currentRightPosition.x - firstTile.x);
+            if (length > 0 && currentPlayerXPosition >= (length / 2f) + firstTile.x) {
+                UpdateTiles();
+            }
         }
     }
 
