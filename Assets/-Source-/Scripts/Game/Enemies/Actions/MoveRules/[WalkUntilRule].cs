@@ -15,7 +15,7 @@ namespace Scripts.Game.Enemies.Actions.MoveRules
 		
 		public override void Do(in BaseEnemy enemy)
 		{
-			Debug.Log("Walk");
+			//Debug.Log("Walk");
 			Walk(enemy);
 		}
 
