@@ -12,7 +12,7 @@ PluginImporter:
   validateReferences: 1
   platformData:
   - first:
-      '': Any
+      : Any
     second:
       enabled: 0
       settings:
@@ -59,7 +59,7 @@ PluginImporter:
     second:
       enabled: 0
       settings:
-        CPU: x86_64
+        CPU: AnyCPU
   - first:
       Standalone: LinuxUniversal
     second:
@@ -84,6 +84,11 @@ PluginImporter:
       enabled: 0
       settings:
         CPU: AnyCPU
+  - first:
+      WebGL: WebGL
+    second:
+      enabled: 1
+      settings: {}
   - first:
       Windows Store Apps: WindowsStoreApps
     second:
