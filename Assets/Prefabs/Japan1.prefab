@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7512433927052373801}
   - component: {fileID: 3878409673965294972}
   - component: {fileID: 6498944075226737340}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: building-japan_large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 612776576667538743}
   - component: {fileID: 4539058216986485559}
   - component: {fileID: 4532284337049753873}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: base-japan_medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 3678803442773090783}
   - component: {fileID: 4804913914478419141}
   - component: {fileID: 3919233070937112892}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: katana (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 5662376223562363554}
   - component: {fileID: 6888931012317847211}
   - component: {fileID: 5150607280727641831}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cloud-triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 5662376223287872092}
   - component: {fileID: 3788857404897564874}
   - component: {fileID: 8749232394013028391}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rocks-small_white
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 5662376224204116671}
   - component: {fileID: 6940239287401230514}
   - component: {fileID: 5506174592970160022}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cloud-simple (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 7466043468653516322}
   - component: {fileID: 4772316231495772214}
   - component: {fileID: 7209059510649447691}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: holder-katana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 5662376223202526528}
   - component: {fileID: 1087677435885631479}
   - component: {fileID: 8299940886204494639}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rock-sharp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 5662376223369513049}
   - component: {fileID: 6022083446983291541}
   - component: {fileID: 6070345440762264193}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cloud-small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 7184061717304739910}
   - component: {fileID: 3556294773397647744}
   - component: {fileID: 6834160118456000844}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bamboo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -887,7 +887,7 @@ GameObject:
   - component: {fileID: 6185467244906340208}
   - component: {fileID: 5127199602130635117}
   - component: {fileID: 7868715141602514738}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: katana (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,7 +982,7 @@ GameObject:
   - component: {fileID: 5662376222849780910}
   - component: {fileID: 4945077095107473992}
   - component: {fileID: 2629953997923145890}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rock-terrasse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1060,7 +1060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9006883487950208150}
   - component: {fileID: 2748526954070788846}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1119,7 +1119,7 @@ GameObject:
   - component: {fileID: 5433906578384428158}
   - component: {fileID: 3956115605189509474}
   - component: {fileID: 4228945501396627523}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: gate-red-japan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1214,7 +1214,7 @@ GameObject:
   - component: {fileID: 5964686700014667688}
   - component: {fileID: 1427312152022420280}
   - component: {fileID: 7516526596996770296}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bamboo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1309,7 +1309,7 @@ GameObject:
   - component: {fileID: 5662376223145616438}
   - component: {fileID: 5662376223145616433}
   - component: {fileID: 5662376223145616432}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1400,7 +1400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5662376224610193956}
   - component: {fileID: 5988176294822851485}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Japan1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,7 +1465,7 @@ GameObject:
   - component: {fileID: 5662376222921040060}
   - component: {fileID: 138605415623694710}
   - component: {fileID: 5779290391680945633}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cloud-big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1545,7 +1545,7 @@ GameObject:
   - component: {fileID: 1348884640241491468}
   - component: {fileID: 7638749182578712994}
   - component: {fileID: 3501713616227507866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: katana (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1640,7 +1640,7 @@ GameObject:
   - component: {fileID: 5662376223455573207}
   - component: {fileID: 1484201897426238778}
   - component: {fileID: 3719062630150740491}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rock-sharp (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1720,7 +1720,7 @@ GameObject:
   - component: {fileID: 1850573519884119738}
   - component: {fileID: 546008357942846922}
   - component: {fileID: 443259873824662209}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: japan-tree-tall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1814,7 +1814,7 @@ GameObject:
   - component: {fileID: 5662376222980491537}
   - component: {fileID: 1891448667553528476}
   - component: {fileID: 7263022877748881776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cloud-simple (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1893,7 +1893,7 @@ GameObject:
   - component: {fileID: 5662376223708678640}
   - component: {fileID: 6065726380040654485}
   - component: {fileID: 9147874178619874852}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cloud-simple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1973,7 +1973,7 @@ GameObject:
   - component: {fileID: 4026759159949105266}
   - component: {fileID: 4204745864023566865}
   - component: {fileID: 6040279723366806247}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bamboo-leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}

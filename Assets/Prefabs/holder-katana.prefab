@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4102294431261684580}
   - component: {fileID: 4102294431262781860}
   - component: {fileID: 392028993462224181}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: holder-katana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
