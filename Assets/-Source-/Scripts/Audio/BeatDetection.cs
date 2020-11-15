@@ -5,11 +5,12 @@ public class BeatDetection : AudioSyncer
 {
     # region Delegates
         public delegate void FullBeat(float val); 
-        private FullBeat fullBeatDelegate;
+        public event FullBeat OnFullBeat;
         public delegate void HalfBeat(float val); 
-        private HalfBeat halfBeatDelegate;
+        public event HalfBeat OnHalfBeat;
         public delegate void QuarterBeat(float val); 
-        private QuarterBeat quarterBeatDelegate;
+        public event QuarterBeat OnQuarterBeat;
+        
     #endregion Delegates
 
     public override void OnUpdate() {
@@ -22,13 +23,13 @@ public class BeatDetection : AudioSyncer
         base.OnBeat(val, beatType);
         switch(beatType) {
             case BEAT_TYPE.FULL:
-                if (fullBeatDelegate != null) fullBeatDelegate(val);
+                OnFullBeat?.Invoke(val);
                 break;
             case BEAT_TYPE.HALF:
-                if (fullBeatDelegate != null) halfBeatDelegate(val);
+                OnHalfBeat?.Invoke(val);
                 break;
             case BEAT_TYPE.QUARTER:
-                if (fullBeatDelegate != null) quarterBeatDelegate(val);
+                OnQuarterBeat?.Invoke(val);
                 break;
         }
     }
