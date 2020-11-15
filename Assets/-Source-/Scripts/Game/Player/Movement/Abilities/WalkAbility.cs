@@ -21,6 +21,9 @@ namespace Scripts.Game.Player.Movement.Abilities
 		private bool _wannaJump = false;
 
 		private bool WannaWalk => (_wannaWalkLeft || _wannaWalkRight);
+
+		// public delegate void PlayerMoved(); 
+        // private PlayerMoved playerMovedDelegate;
 		
 		#endregion
 
@@ -40,7 +43,9 @@ namespace Scripts.Game.Player.Movement.Abilities
 			{
 				if(WannaWalk)
 				{
+					// bool walked = 
 					TryWalk();
+					//if (walked && playerMovedDelegate != null) playerMovedDelegate();
 				}
 			}
 
