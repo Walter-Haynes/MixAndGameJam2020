@@ -11,11 +11,30 @@ namespace Scripts.Game.Enemies.Actions
 	{
 		[BoxGroup("Move")]
 		[InlineEditor]
-		[SerializeField] private MoveRule moveRule;
-        
+		[SerializeField] private MoveRule[] moveRules;
+
+		public override void Initialize(in BaseEnemy enemy)
+		{
+			base.Initialize(in enemy);
+
+			_index = 0;
+		}
+
+		private int _index = 0;
 		protected override void React()
 		{
-			moveRule.Do(Enemy);
+			if(moveRules == null) return;
+			
+			if(moveRules[_index] != null)
+			{
+				moveRules[_index].Do(Enemy);
+			}
+			_index++;
+
+			if(_index >= moveRules.Length)
+			{
+				_index = 0;
+			}
 		}
 	}
 }

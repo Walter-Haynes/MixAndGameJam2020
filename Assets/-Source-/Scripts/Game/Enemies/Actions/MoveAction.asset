@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatType: 0
   reactEvery: 1
-  scaleTo: {x: 1.5, y: 1.5, z: 1.5}
-  scaleDuration: 0.1
+  moveRules:
+  - {fileID: 11400000, guid: 0938b199ce10750429df44c279194e8c, type: 2}
+  - {fileID: 11400000, guid: caa569f8bd849b945846f5f99c03b0af, type: 2}
+  - {fileID: 11400000, guid: 0938b199ce10750429df44c279194e8c, type: 2}
+  - {fileID: 11400000, guid: 0938b199ce10750429df44c279194e8c, type: 2}
+  - {fileID: 11400000, guid: caa569f8bd849b945846f5f99c03b0af, type: 2}

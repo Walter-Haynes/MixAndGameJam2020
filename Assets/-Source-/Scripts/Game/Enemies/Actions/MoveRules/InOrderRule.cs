@@ -18,7 +18,7 @@ namespace Scripts.Game.Enemies.Actions.MoveRules
             }
             _index++;
 
-            if(_index > moveRules.Length)
+            if(_index >= moveRules.Length)
             {
                 _index = 0;
             }

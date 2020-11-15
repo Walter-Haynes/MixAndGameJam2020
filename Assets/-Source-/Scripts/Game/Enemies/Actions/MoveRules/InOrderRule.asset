@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41678efd1aefd04bb5f6817987174f6, type: 3}
   m_Name: InOrderRule
   m_EditorClassIdentifier: 
-  moveRules: []
+  moveRules:
+  - {fileID: 11400000, guid: 0938b199ce10750429df44c279194e8c, type: 2}
+  - {fileID: 11400000, guid: caa569f8bd849b945846f5f99c03b0af, type: 2}
+  - {fileID: 11400000, guid: 0938b199ce10750429df44c279194e8c, type: 2}
+  - {fileID: 11400000, guid: 0938b199ce10750429df44c279194e8c, type: 2}
+  - {fileID: 11400000, guid: caa569f8bd849b945846f5f99c03b0af, type: 2}

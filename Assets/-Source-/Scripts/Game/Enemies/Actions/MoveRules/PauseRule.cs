@@ -7,6 +7,7 @@ namespace Scripts.Game.Enemies.Actions.MoveRules
 	{
 		public override void Do(in BaseEnemy enemy)
 		{
+			Debug.Log("Stop");
             //Literally nothing.
 		}
 	}
