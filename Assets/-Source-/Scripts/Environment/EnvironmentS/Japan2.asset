@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e3718625f78134c8c826438b587d96, type: 3}
   m_Name: Japan2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4301372351481069353, guid: 46a17169ea7097f46bbc8e9cd9d97314, type: 3}
+  prefab: {fileID: 5085455916134693504, guid: de4509b643703084a91106a6d20f2765, type: 3}
   type: 0

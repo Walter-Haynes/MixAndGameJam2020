@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9aa8ed67591432941bb76f12eb23ff91, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -153,8 +153,13 @@ MonoBehaviour:
   environments:
   - {fileID: 11400000, guid: 06f72ef9c72831740aafb3dbe8c4d37c, type: 2}
   - {fileID: 11400000, guid: 9924b1011ecf8bf46ae58f6fdc7f5cc3, type: 2}
+  - {fileID: 11400000, guid: 1933153f5b2909d43af08251bd977753, type: 2}
+  - {fileID: 11400000, guid: 3e7c2e0116f5e6e47a2b6979abc45df7, type: 2}
+  - {fileID: 11400000, guid: f641edb80f782134098b926e61da974b, type: 2}
+  - {fileID: 11400000, guid: fb0d1e08ef6c7174b81ccc1a0ad3df16, type: 2}
   obstacles:
   - {fileID: 4102294431260585840, guid: 4170d8d640496fe40b88690fb7eb7ae8, type: 3}
+  - {fileID: 3189555286185345127, guid: 7c3a6cf985fab754ca6dd9a64254e46d, type: 3}
   totalTileCount: 10
   totalPrefabCount: 4
   topFloorOffset: 25
@@ -481,7 +486,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

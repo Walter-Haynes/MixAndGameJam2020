@@ -44,6 +44,9 @@ namespace Generation
         private float currentTileLengthBottom = 0f;
         private float currentTileLengthTop = 0f;
 
+        // Used to track empty prefabs
+        private string previousGeneratedObject = "";
+
         #endregion Bottom
 
         public void InitializeGrid() {
@@ -60,7 +63,6 @@ namespace Generation
         private void InstantiateObjects() {
             // Tiles
             for (int i = 0; i < environments.Count; ++i) {
-                Debug.Log(i);
                 Pooler pooler = gameObject.AddComponent<Pooler>();
                 pooler.InitializePooler(environments[i].prefab, true, totalPrefabCount);
                 List<Pooler> poolerList;
@@ -82,11 +84,12 @@ namespace Generation
             // Bottom floor generation
             for (int i = 0; i < totalTileCount; ++i) {
                 GenerateNextTile(true);
-            }
-            // Top floor generation
-            for (int i = 0; i < totalTileCount; ++i) {
                 GenerateNextTile(false);
             }
+            // // Top floor generation
+            // for (int i = 0; i < totalTileCount; ++i) {
+            //     GenerateNextTile(false);
+            // }
         }
 
         private int GetRandomNumber(int range) {
@@ -127,6 +130,9 @@ namespace Generation
                 SetNewTileTotalLength(box.bounds.size.x, true);
             }
             else {
+                while (env.name == "Empty" && previousGeneratedObject == "Empty") {
+                    env = startingPools[randomNumber].GetObject();
+                }
                 Vector3 position = currentRightPositionTop;
                 position.z = zOffset;
                 env.transform.position = position;
@@ -138,6 +144,7 @@ namespace Generation
                 currentTilesTop.Enqueue((env, currentEnvironmentType, randomNumber));
                 SetNewTileTotalLength(box.bounds.size.x, false);
             }
+            previousGeneratedObject = env.name;
             // Spawn an obstacle for that tile
             SpawnObstacles(xPosition);
         }

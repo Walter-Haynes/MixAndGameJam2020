@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7512433927052373801}
   - component: {fileID: 3878409673965294972}
   - component: {fileID: 6498944075226737340}
+  - component: {fileID: 3447609400994534120}
   m_Layer: 9
   m_Name: building-japan_large
   m_TagString: Untagged
@@ -96,6 +97,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 3267a70f223ce4181aee05284a29e794, type: 3}
+--- !u!114 &3447609400994534120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117689121244858386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a7bb96f8f571445901e2d60dc13c0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bias: 25
+  timeStep: 0.15
+  timeToBeat: 0.05
+  restSmoothTime: 2
+  biasHalf: 12.5
+  timeStepHalf: 0.075
+  timeToBeatHalf: 0.025
+  restSmoothTimeHalf: 1
+  biasQuarter: 6.25
+  timeStepQuarter: 0.0375
+  timeToBeatQuarter: 0.0125
+  restSmoothTimeQuarter: 0.5
+  type: 0
+  beatScale: {x: 1.5, y: 1.5, z: 1.5}
+  restScale: {x: 0.9, y: 0.9, z: 0.9}
 --- !u!1 &1210773170904530146
 GameObject:
   m_ObjectHideFlags: 0
