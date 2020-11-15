@@ -6,5 +6,6 @@ namespace Generation {
     {
         public GameObject prefab;
         public ENVIRONMENT_TYPE type;
+        public bool isObstacleTypeTile;
     }
 }

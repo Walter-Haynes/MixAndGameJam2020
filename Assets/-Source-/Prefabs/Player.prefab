@@ -79,7 +79,7 @@ MonoBehaviour:
   visuals: {fileID: 2251716617104382816}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 513
   skinWidth: 0.01
   <Gravity>k__BackingField: {x: 0, y: -50}
 --- !u!114 &2251716617091261615

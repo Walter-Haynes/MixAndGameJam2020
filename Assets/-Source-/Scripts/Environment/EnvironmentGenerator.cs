@@ -21,11 +21,13 @@ namespace Generation
                 private float topFloorOffset = 25f;
             [SerializeField, Tooltip("How often to spawn an obstacle")]
                 private float obstacleSpawnPercentage = 70f;
+            [SerializeField, Tooltip("What z axis value should the prefabs spawn")]
+                private float zOffset = -12f;
         
         #region Bottom
 
         // Currently spawned tiles Tuple
-        // Gameobject tile, the kind of tile, and it's index in the pooler list
+        // Gameobject tile, the kind of tile, and it's index in the pooler list, and it's an obstacle type tile
         private Queue<(GameObject, ENVIRONMENT_TYPE, int)> currentTilesBottom;
         private Queue<(GameObject, ENVIRONMENT_TYPE, int)> currentTilesTop;
         private Queue<GameObject> currentObstacles;
@@ -36,11 +38,15 @@ namespace Generation
         private Vector3 currentRightPositionTop = Vector3.zero;
         // List of all tile types and their pools
         private Dictionary<ENVIRONMENT_TYPE, List<Pooler>> tilePools;
+        private Dictionary <string, bool> isObstacleTile; // I know this could be done better but time
         // List of all obstacles and their pools
         private Dictionary<string, Pooler> obstaclePools;
         // Total length of all the spawned tiles
         private float currentTileLengthBottom = 0f;
         private float currentTileLengthTop = 0f;
+
+        // Used to track empty prefabs
+        private string previousGeneratedObject;
 
         #endregion Bottom
 
@@ -51,6 +57,7 @@ namespace Generation
             currentRightPositionTop.y = topFloorOffset;
             tilePools = new Dictionary<ENVIRONMENT_TYPE, List<Pooler>>();
             obstaclePools = new Dictionary<string, Pooler>();
+            isObstacleTile = new Dictionary<string, bool>();
             InstantiateObjects();
             GenerateGrid();
         }
@@ -60,8 +67,12 @@ namespace Generation
             for (int i = 0; i < environments.Count; ++i) {
                 Pooler pooler = gameObject.AddComponent<Pooler>();
                 pooler.InitializePooler(environments[i].prefab, true, totalPrefabCount);
-                tilePools[environments[i].type] = new List<Pooler>();
+                List<Pooler> poolerList;
+                tilePools.TryGetValue(environments[i].type, out poolerList);
+                if (poolerList == null)
+                    tilePools[environments[i].type] = new List<Pooler>();
                 tilePools[environments[i].type].Add(pooler);
+                isObstacleTile[environments[i].prefab.name] = environments[i].isObstacleTypeTile;
             }
             // Obstacles
             for (int i = 0; i < obstacles.Count; ++i) {
@@ -76,11 +87,12 @@ namespace Generation
             // Bottom floor generation
             for (int i = 0; i < totalTileCount; ++i) {
                 GenerateNextTile(true);
-            }
-            // Top floor generation
-            for (int i = 0; i < totalTileCount; ++i) {
                 GenerateNextTile(false);
             }
+            // // Top floor generation
+            // for (int i = 0; i < totalTileCount; ++i) {
+            //     GenerateNextTile(false);
+            // }
         }
 
         private int GetRandomNumber(int range) {
@@ -104,11 +116,14 @@ namespace Generation
         public void GenerateNextTile(bool bottom) {
             List<Pooler> startingPools = tilePools[currentEnvironmentType];
             int randomNumber = GetRandomNumber(startingPools.Count);
+            // Debug.Log(randomNumber + "  " + startingPools.Count);
             GameObject env = startingPools[randomNumber].GetObject();
             float xPosition = 0f;
             // I know this is not the neatest
             if (bottom) {
-                env.transform.position = currentRightPositionBottom;
+                Vector3 position = currentRightPositionBottom;
+                position.z = zOffset;
+                env.transform.position = position;
                 env.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 env.SetActive(true);
                 BoxCollider box = env.GetComponent<BoxCollider>();
@@ -118,7 +133,13 @@ namespace Generation
                 SetNewTileTotalLength(box.bounds.size.x, true);
             }
             else {
-                env.transform.position = currentRightPositionTop;
+                // While previous was obstacle and current is obstacle
+                while (isObstacleTile.ContainsKey(env.name) && isObstacleTile.ContainsKey(previousGeneratedObject)) {
+                    env = startingPools[randomNumber].GetObject();
+                }
+                Vector3 position = currentRightPositionTop;
+                position.z = zOffset;
+                env.transform.position = position;
                 env.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
                 env.SetActive(true);
                 BoxCollider box = env.GetComponent<BoxCollider>();
@@ -127,6 +148,7 @@ namespace Generation
                 currentTilesTop.Enqueue((env, currentEnvironmentType, randomNumber));
                 SetNewTileTotalLength(box.bounds.size.x, false);
             }
+            previousGeneratedObject = env.name;
             // Spawn an obstacle for that tile
             SpawnObstacles(xPosition);
         }
@@ -177,8 +199,8 @@ namespace Generation
                 string name = obstacles[index].name;
                 GameObject obstacle = obstaclePools[name].GetObject();
                 obstacle.transform.position = new Vector3(GetRandomInRange(currentTileMiddlePosition - 2f, currentTileMiddlePosition + 2f),
-                                                          GetRandomInRange(5f, topFloorOffset - 5f),
-                                                          0f);
+                                                          GetRandomInRange(6f, topFloorOffset - 6f),
+                                                          zOffset);
                 if (GetRandomNumber(2) == 1)
                     obstacle.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
                 obstacle.SetActive(true);
