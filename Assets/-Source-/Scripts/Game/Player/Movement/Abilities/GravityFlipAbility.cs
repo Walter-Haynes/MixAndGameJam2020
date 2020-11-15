@@ -39,7 +39,7 @@ namespace Scripts.Game.Player.Movement.Abilities
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private bool TryFlip()
 		{
-			Debug.Log("FLIP!");
+			//Debug.Log("FLIP!");
 			
 			//TODO: (Walter) Beat check.
 			Player.Gravity *= -1;
