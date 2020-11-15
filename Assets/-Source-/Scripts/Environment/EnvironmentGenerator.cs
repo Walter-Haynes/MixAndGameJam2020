@@ -46,7 +46,7 @@ namespace Generation
         private float currentTileLengthTop = 0f;
 
         // Used to track empty prefabs
-        private string previousGeneratedObject;
+        private string previousGeneratedObject = "", previouspreviousGeneratedObject = ""; // naming...
 
         #endregion Bottom
 
@@ -72,7 +72,8 @@ namespace Generation
                 if (poolerList == null)
                     tilePools[environments[i].type] = new List<Pooler>();
                 tilePools[environments[i].type].Add(pooler);
-                isObstacleTile[environments[i].prefab.name] = environments[i].isObstacleTypeTile;
+                if (environments[i].isObstacleTypeTile)
+                    isObstacleTile[environments[i].prefab.name] = true;// environments[i].isObstacleTypeTile;
             }
             // Obstacles
             for (int i = 0; i < obstacles.Count; ++i) {
@@ -134,7 +135,10 @@ namespace Generation
             }
             else {
                 // While previous was obstacle and current is obstacle
-                while (isObstacleTile.ContainsKey(env.name) && isObstacleTile.ContainsKey(previousGeneratedObject)) {
+                bool previousEmpty = (isObstacleTile.ContainsKey(previousGeneratedObject));
+                bool previouspreviousEmpty = (isObstacleTile.ContainsKey(previouspreviousGeneratedObject));
+                while (isObstacleTile.ContainsKey(env.name)
+                        && (previousEmpty || previouspreviousEmpty)) {
                     env = startingPools[randomNumber].GetObject();
                 }
                 Vector3 position = currentRightPositionTop;
@@ -148,6 +152,7 @@ namespace Generation
                 currentTilesTop.Enqueue((env, currentEnvironmentType, randomNumber));
                 SetNewTileTotalLength(box.bounds.size.x, false);
             }
+            previouspreviousGeneratedObject = previousGeneratedObject;
             previousGeneratedObject = env.name;
             // Spawn an obstacle for that tile
             SpawnObstacles(xPosition);

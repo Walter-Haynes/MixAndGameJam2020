@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7655163260799900451, guid: cf403a228a072dd4e9db400e241cd781, type: 3}
   type: 0
+  isObstacleTypeTile: 1

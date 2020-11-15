@@ -18,6 +18,7 @@ public class GameManager : Singleton<GameManager>
         environmentGenerator.InitializeGrid();
         Vector3 startingPosition = new Vector3(2f, 6f, zAxisValue);
         player = Instantiate(playerPrefab,startingPosition, Quaternion.identity);
+        player.transform.localScale = new Vector3(1.5f, 3f, 1.5f);
         cinemachine.Follow = player.transform;
         cinemachine.LookAt = player.transform;
         StartCoroutine(CheckPlayerPosition());
