@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using Lean.Transition;
+using Scripts.Game.Player.Movement;
 using UnityEngine;
 
 namespace Scripts.Game.Enemies.Actions.MoveRules
@@ -41,9 +42,16 @@ namespace Scripts.Game.Enemies.Actions.MoveRules
 			
 			Collider2D __hitWall = Physics2D.OverlapCircle(point: __targetPos, radius: 0.15f);
 
-			if(__hitWall)
+			if (!__hitWall) return __targetPos;
+			
+			if (__hitWall.gameObject.layer == LayerMask.NameToLayer(layerName: "Player"))
 			{
-				__targetPos = TargetOnHitWall(enemy: enemy);
+				PlayerController2D.Instance.Health.Lives--;
+				__targetPos = enemy.transform.position;
+			}
+			else
+			{
+				__targetPos = TargetOnHitWall(enemy: enemy);		
 			}
 
 			return __targetPos;

@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Scripts.Game.Player
 {
 	public sealed class PlayerHealth : MonoBehaviour, IDamageable
 	{
+		[ReadOnly]
+		[SerializeField]
 		private int _lives;
 		public int Lives 
 		{ 
@@ -21,7 +25,7 @@ namespace Scripts.Game.Player
 
 		public void Kill()
 		{
-			
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 	}
 }

@@ -38,6 +38,10 @@ namespace Scripts.Game.Player.Movement
 
         #endregion
 
+        private PlayerHealth _health; 
+        [PublicAPI]
+        public PlayerHealth Health => _health = _health ? _health : GetComponent<PlayerHealth>(); 
+        
         private IEnumerable<PlayerAbility> Abilities => GetComponents<PlayerAbility>();
         
         [PublicAPI]
@@ -67,6 +71,7 @@ namespace Scripts.Game.Player.Movement
 
         private BoxCollider2D _boxColliderCache;
         private Rigidbody2D   _rigidbody2DCache;
+
         private void Awake()
         {
             if (boxCollider == null)
