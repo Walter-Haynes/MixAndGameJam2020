@@ -81,6 +81,11 @@ namespace Generation
                 pooler.InitializePooler(obstacles[i], true, totalPrefabCount);
                 obstaclePools[obstacles[i].name] = pooler;
             }
+            // foreach (KeyValuePair<string, bool> kvp in isObstacleTile)
+            // {
+            //     //textBox3.Text += ("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+            //     Debug.Log(kvp.Key + kvp.Value);
+            // }
         }
 
         private void GenerateGrid() {
@@ -137,8 +142,10 @@ namespace Generation
                 // While previous was obstacle and current is obstacle
                 bool previousEmpty = (isObstacleTile.ContainsKey(previousGeneratedObject));
                 bool previouspreviousEmpty = (isObstacleTile.ContainsKey(previouspreviousGeneratedObject));
+                Debug.Log(env.name + " "  + previousEmpty + " " + previouspreviousEmpty);
                 while (isObstacleTile.ContainsKey(env.name)
                         && (previousEmpty || previouspreviousEmpty)) {
+                    randomNumber = GetRandomNumber(startingPools.Count);
                     env = startingPools[randomNumber].GetObject();
                 }
                 Vector3 position = currentRightPositionTop;
