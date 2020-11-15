@@ -2,6 +2,7 @@
 using Generation;
 using Cinemachine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -30,15 +31,19 @@ public class GameManager : Singleton<GameManager>
     //     playerMove.playerMovedDelegate -= CheckTiles;
     // }
 
-    private void CheckTiles() {
-        // environmentGenerator.CheckPlayerPosition(player.transform.position.x);
-    }
-
+    // TODO, do on player move event
     IEnumerator CheckPlayerPosition() {
         WaitForSeconds seconds = new WaitForSeconds(0.5f);
         while (true) {
             environmentGenerator.CheckPlayerPosition(player.transform.position.x);
             yield return seconds;
         }
+    }
+
+    /// <summary>
+    /// Restart the level
+    /// </summary>
+    public void Restart() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
