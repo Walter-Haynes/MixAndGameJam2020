@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f080e61bc6d9bd1429c4aa131c4091d4, type: 3}
+  m_Name: MoveAction
+  m_EditorClassIdentifier: 
+  beatType: 0
+  reactEvery: 1
+  scaleTo: {x: 1.5, y: 1.5, z: 1.5}
+  scaleDuration: 0.1
