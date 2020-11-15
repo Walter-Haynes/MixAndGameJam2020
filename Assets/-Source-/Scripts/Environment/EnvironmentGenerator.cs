@@ -21,6 +21,8 @@ namespace Generation
                 private float topFloorOffset = 25f;
             [SerializeField, Tooltip("How often to spawn an obstacle")]
                 private float obstacleSpawnPercentage = 70f;
+            [SerializeField, Tooltip("What z axis value should the prefabs spawn")]
+                private float zOffset = -12f;
         
         #region Bottom
 
@@ -58,9 +60,13 @@ namespace Generation
         private void InstantiateObjects() {
             // Tiles
             for (int i = 0; i < environments.Count; ++i) {
+                Debug.Log(i);
                 Pooler pooler = gameObject.AddComponent<Pooler>();
                 pooler.InitializePooler(environments[i].prefab, true, totalPrefabCount);
-                tilePools[environments[i].type] = new List<Pooler>();
+                List<Pooler> poolerList;
+                tilePools.TryGetValue(environments[i].type, out poolerList);
+                if (poolerList == null)
+                    tilePools[environments[i].type] = new List<Pooler>();
                 tilePools[environments[i].type].Add(pooler);
             }
             // Obstacles
@@ -104,11 +110,14 @@ namespace Generation
         public void GenerateNextTile(bool bottom) {
             List<Pooler> startingPools = tilePools[currentEnvironmentType];
             int randomNumber = GetRandomNumber(startingPools.Count);
+            // Debug.Log(randomNumber + "  " + startingPools.Count);
             GameObject env = startingPools[randomNumber].GetObject();
             float xPosition = 0f;
             // I know this is not the neatest
             if (bottom) {
-                env.transform.position = currentRightPositionBottom;
+                Vector3 position = currentRightPositionBottom;
+                position.z = zOffset;
+                env.transform.position = position;
                 env.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 env.SetActive(true);
                 BoxCollider box = env.GetComponent<BoxCollider>();
@@ -118,7 +127,9 @@ namespace Generation
                 SetNewTileTotalLength(box.bounds.size.x, true);
             }
             else {
-                env.transform.position = currentRightPositionTop;
+                Vector3 position = currentRightPositionTop;
+                position.z = zOffset;
+                env.transform.position = position;
                 env.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
                 env.SetActive(true);
                 BoxCollider box = env.GetComponent<BoxCollider>();
@@ -177,8 +188,8 @@ namespace Generation
                 string name = obstacles[index].name;
                 GameObject obstacle = obstaclePools[name].GetObject();
                 obstacle.transform.position = new Vector3(GetRandomInRange(currentTileMiddlePosition - 2f, currentTileMiddlePosition + 2f),
-                                                          GetRandomInRange(5f, topFloorOffset - 5f),
-                                                          0f);
+                                                          GetRandomInRange(6f, topFloorOffset - 6f),
+                                                          zOffset);
                 if (GetRandomNumber(2) == 1)
                     obstacle.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
                 obstacle.SetActive(true);

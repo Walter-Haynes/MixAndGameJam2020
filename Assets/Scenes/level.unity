@@ -152,12 +152,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environments:
   - {fileID: 11400000, guid: 06f72ef9c72831740aafb3dbe8c4d37c, type: 2}
+  - {fileID: 11400000, guid: 9924b1011ecf8bf46ae58f6fdc7f5cc3, type: 2}
   obstacles:
   - {fileID: 4102294431260585840, guid: 4170d8d640496fe40b88690fb7eb7ae8, type: 3}
   totalTileCount: 10
   totalPrefabCount: 4
   topFloorOffset: 25
   obstacleSpawnPercentage: 70
+  zOffset: -12
 --- !u!4 &516849509
 Transform:
   m_ObjectHideFlags: 0
@@ -166,7 +168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516849507}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 121.339775, y: 53.16719, z: -19.41748}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
