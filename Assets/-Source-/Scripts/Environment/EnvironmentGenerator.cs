@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Generation
@@ -12,12 +11,16 @@ namespace Generation
         [Header("Settings to generate the environment")]
             [SerializeField]
                 private List<EnvironmentSettings> environments;
+            [SerializeField]
+                private List<GameObject> obstacles;
             [SerializeField, Tooltip("How many prefabs tiles to have on a scene at one time")]
                 private int totalTileCount = 10;
             [SerializeField, Tooltip("How many gameobjects to spawn per prefab")]
                 private int totalPrefabCount = 5;
             [SerializeField, Tooltip("How far the top floor should be")]
-                private float topFloorOffset = 100f;
+                private float topFloorOffset = 25f;
+            [SerializeField, Tooltip("How often to spawn an obstacle")]
+                private float obstacleSpawnPercentage = 70f;
         
         #region Bottom
 
@@ -25,6 +28,7 @@ namespace Generation
         // Gameobject tile, the kind of tile, and it's index in the pooler list
         private Queue<(GameObject, ENVIRONMENT_TYPE, int)> currentTilesBottom;
         private Queue<(GameObject, ENVIRONMENT_TYPE, int)> currentTilesTop;
+        private Queue<GameObject> currentObstacles;
         // Current environment
         private ENVIRONMENT_TYPE currentEnvironmentType;
         // Current tracked position on the right end of the tiles
@@ -32,6 +36,8 @@ namespace Generation
         private Vector3 currentRightPositionTop = Vector3.zero;
         // List of all tile types and their pools
         private Dictionary<ENVIRONMENT_TYPE, List<Pooler>> tilePools;
+        // List of all obstacles and their pools
+        private Dictionary<string, Pooler> obstaclePools;
         // Total length of all the spawned tiles
         private float currentTileLengthBottom = 0f;
         private float currentTileLengthTop = 0f;
@@ -41,18 +47,27 @@ namespace Generation
         public void InitializeGrid() {
             currentTilesBottom = new Queue<(GameObject, ENVIRONMENT_TYPE, int)>();
             currentTilesTop = new Queue<(GameObject, ENVIRONMENT_TYPE, int)>();
+            currentObstacles = new Queue<GameObject>();
             currentRightPositionTop.y = topFloorOffset;
+            tilePools = new Dictionary<ENVIRONMENT_TYPE, List<Pooler>>();
+            obstaclePools = new Dictionary<string, Pooler>();
             InstantiateObjects();
             GenerateGrid();
         }
 
         private void InstantiateObjects() {
-            tilePools = new Dictionary<ENVIRONMENT_TYPE, List<Pooler>>();
+            // Tiles
             for (int i = 0; i < environments.Count; ++i) {
                 Pooler pooler = gameObject.AddComponent<Pooler>();
                 pooler.InitializePooler(environments[i].prefab, true, totalPrefabCount);
                 tilePools[environments[i].type] = new List<Pooler>();
                 tilePools[environments[i].type].Add(pooler);
+            }
+            // Obstacles
+            for (int i = 0; i < obstacles.Count; ++i) {
+                Pooler pooler = gameObject.AddComponent<Pooler>();
+                pooler.InitializePooler(obstacles[i], true, totalPrefabCount);
+                obstaclePools[obstacles[i].name] = pooler;
             }
         }
 
@@ -72,6 +87,10 @@ namespace Generation
             return Random.Range(0, range);
         }
 
+        private float GetRandomInRange(float start, float end) {
+            return Random.Range(start, end);
+        }
+
         private void SetNewTileTotalLength(float length, bool bottom) {
             if (bottom)
                 currentTileLengthBottom += length;
@@ -86,12 +105,14 @@ namespace Generation
             List<Pooler> startingPools = tilePools[currentEnvironmentType];
             int randomNumber = GetRandomNumber(startingPools.Count);
             GameObject env = startingPools[randomNumber].GetObject();
+            float xPosition = 0f;
             // I know this is not the neatest
             if (bottom) {
                 env.transform.position = currentRightPositionBottom;
                 env.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 env.SetActive(true);
                 BoxCollider box = env.GetComponent<BoxCollider>();
+                xPosition = currentRightPositionBottom.x + (box.bounds.size.x / 2);
                 currentRightPositionBottom.x += box.bounds.size.x;
                 currentTilesBottom.Enqueue((env, currentEnvironmentType, randomNumber));
                 SetNewTileTotalLength(box.bounds.size.x, true);
@@ -101,10 +122,13 @@ namespace Generation
                 env.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
                 env.SetActive(true);
                 BoxCollider box = env.GetComponent<BoxCollider>();
+                xPosition = currentRightPositionTop.x + (box.bounds.size.x / 2);
                 currentRightPositionTop.x += box.bounds.size.x;
                 currentTilesTop.Enqueue((env, currentEnvironmentType, randomNumber));
                 SetNewTileTotalLength(box.bounds.size.x, false);
             }
+            // Spawn an obstacle for that tile
+            SpawnObstacles(xPosition);
         }
         
         /// <summary>
@@ -124,6 +148,11 @@ namespace Generation
             SetNewTileTotalLength(-1 * tileTop.Item1.GetComponent<BoxCollider>().bounds.size.x, false);
             tilePools[tileTop.Item2][tileTop.Item3].ReturnObject(tileTop.Item1);
             GenerateNextTile(false);
+            // Obstacles
+            GameObject obstacle = currentObstacles.Dequeue();
+            if (obstacle == null) return;
+            string name = obstacle.name.Replace("(Clone)", "");
+            obstaclePools[name].ReturnObject(obstacle);
         }
 
         // TODO: implement
@@ -133,11 +162,30 @@ namespace Generation
 
         public void CheckPlayerPosition(float currentPlayerXPosition) {
             // If player is in the middle of the length of all the tiles then spawn the next one
-            // TODO: can store first item instead of checking each time
+            // TODO: can store first tile on creation instead of checking each time
             Vector3 firstTile = currentTilesBottom.Peek().Item1.transform.position; // should use start of collider
             float length = (currentRightPositionBottom.x - firstTile.x);
             if (length > 0 && currentPlayerXPosition >= (length / 2f) + firstTile.x) {
                 UpdateTiles();
+            }
+        }
+
+        private void SpawnObstacles(float currentTileMiddlePosition) {
+            // TODO: Should do 0 - 1 and make obstacleSpawnPercentage a decimal value
+            if (GetRandomNumber(100) > obstacleSpawnPercentage) {
+                int index = GetRandomNumber(obstacles.Count);
+                string name = obstacles[index].name;
+                GameObject obstacle = obstaclePools[name].GetObject();
+                obstacle.transform.position = new Vector3(GetRandomInRange(currentTileMiddlePosition - 2f, currentTileMiddlePosition + 2f),
+                                                          GetRandomInRange(5f, topFloorOffset - 5f),
+                                                          0f);
+                if (GetRandomNumber(2) == 1)
+                    obstacle.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                obstacle.SetActive(true);
+                currentObstacles.Enqueue(obstacle);
+            }
+            else {
+                currentObstacles.Enqueue(null);
             }
         }
     }

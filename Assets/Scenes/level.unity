@@ -152,8 +152,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environments:
   - {fileID: 11400000, guid: 06f72ef9c72831740aafb3dbe8c4d37c, type: 2}
+  obstacles:
+  - {fileID: 4102294431260585840, guid: 4170d8d640496fe40b88690fb7eb7ae8, type: 3}
   totalTileCount: 10
   totalPrefabCount: 4
+  topFloorOffset: 25
+  obstacleSpawnPercentage: 70
 --- !u!4 &516849509
 Transform:
   m_ObjectHideFlags: 0
@@ -382,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 1.5, y: 0, z: 0.3}
-  ShoulderOffset: {x: 0.5, y: 0.68, z: -4.2}
+  ShoulderOffset: {x: 0.5, y: 10.46, z: -22.91}
   VerticalArmLength: 0.4
   CameraSide: 1
   CameraDistance: 2
