@@ -15,6 +15,8 @@ namespace Scripts.Game.Player.Movement.Abilities
 		[UsedImplicitly]
 		private bool _wannaFlip = false;
 		
+		private bool CanFlip => (Player.IsOnBeat);
+		
 		#endregion
 
 		#region Methods
@@ -39,9 +41,8 @@ namespace Scripts.Game.Player.Movement.Abilities
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private bool TryFlip()
 		{
-			//Debug.Log("FLIP!");
+			if(!CanFlip) return false;
 			
-			//TODO: (Walter) Beat check.
 			Player.Gravity *= -1;
 
 			Vector3 __currentRotation = Player.transform.rotation.eulerAngles;

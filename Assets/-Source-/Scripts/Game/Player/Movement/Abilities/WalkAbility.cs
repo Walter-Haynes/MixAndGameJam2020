@@ -21,11 +21,8 @@ namespace Scripts.Game.Player.Movement.Abilities
 		private bool _wannaJump = false;
 		private bool WannaWalk => (_wannaWalkLeft || _wannaWalkRight);
 
-		private bool CanJump => (Player.IsGrounded);
+		private bool CanWalk => (Player.IsGrounded && Player.IsOnBeat);
 
-		// public delegate void PlayerMoved(); 
-        // private PlayerMoved playerMovedDelegate;
-		
 		#endregion
 
 		#region Methods
@@ -40,14 +37,9 @@ namespace Scripts.Game.Player.Movement.Abilities
 
 		internal override void AbilityFixedUpdate()
 		{
-			if(!_wannaJump)
+			if(!_wannaJump && WannaWalk)
 			{
-				if(WannaWalk)
-				{
-					// bool walked = 
-					TryWalk();
-					//if (walked && playerMovedDelegate != null) playerMovedDelegate();
-				}
+				TryWalk();
 			}
 
 			//reset
@@ -59,9 +51,7 @@ namespace Scripts.Game.Player.Movement.Abilities
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private bool TryWalk()
 		{
-			//TODO: (Walter) Beat check.
-
-			if(!CanJump) return false;
+			if(!CanWalk) return false;
 
 			(bool __canHop, Vector3 __targetPos) = GetNextPos();
 

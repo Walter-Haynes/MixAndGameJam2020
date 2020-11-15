@@ -2,6 +2,10 @@
 
 using JetBrains.Annotations;
 
+#if ODIN_INSPECTOR
+using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
+#endif
+
 namespace Scripts.Utilities
 {
 	public abstract class SingletonMonoBehaviour<T> : MonoBehaviour 

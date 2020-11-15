@@ -18,6 +18,8 @@ namespace Scripts.Game.Player.Movement.Abilities
 		private bool _wannaJump = false;
 		
 		#endregion
+		
+		private bool CanJump => (Player.IsGrounded && Player.IsOnBeat);
 
 		#region Methods
 
@@ -40,9 +42,7 @@ namespace Scripts.Game.Player.Movement.Abilities
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private bool TryJump()
 		{
-			//TODO: (Walter) Beat check.
-
-			if (!Player.IsGrounded) return false;
+			if(!CanJump) return false;
 
 			// Calculate the velocity required to achieve the target jump height.
 			float __jumpSpeed = Mathf.Sqrt(f: 2 * jumpHeight * Player.Gravity.y.Abs());

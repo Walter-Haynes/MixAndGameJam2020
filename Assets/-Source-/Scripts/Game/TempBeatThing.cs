@@ -6,7 +6,7 @@ using JetBrains.Annotations;
 
 using Scripts.Utilities;
 
-public class TempBeatThing : SingletonMonoBehaviour<TempBeatThing>
+public sealed class TempBeatThing : SingletonLazyMonoBehaviour<TempBeatThing>
 {
     [SerializeField] private float bpm = 115;
 

@@ -2,6 +2,7 @@
 using UnityEngine;
 
 using JetBrains.Annotations;
+using Sirenix.Serialization;
 
 namespace Scripts.Game.Player.Movement
 {
@@ -18,7 +19,12 @@ namespace Scripts.Game.Player.Movement
         [SerializeField] private LayerMask groundLayer = 1 << 0;
 
         [SerializeField] private float skinWidth = 0.01f;
+
+        [SerializeField] private float beatGraceTime = 0.1f;
+        
+        
         private const float MIN_MOVE_DISTANCE = 0.001f;
+        
 
         private Rigidbody2D _rigidbody2D;
         
@@ -38,9 +44,17 @@ namespace Scripts.Game.Player.Movement
 
         #endregion
 
+        #region Beats
+
+        //private static BeatManager BeatDetector => BeatManager.Instance;
+
+        private float _lastBeatTime;
+
+        #endregion
+
         private PlayerHealth _health; 
         [PublicAPI]
-        public PlayerHealth Health => _health = _health ? _health : GetComponent<PlayerHealth>(); 
+        public PlayerHealth Health => _health = _health ? _health : GetComponent<PlayerHealth>();
         
         private IEnumerable<PlayerAbility> Abilities => GetComponents<PlayerAbility>();
         
@@ -117,6 +131,12 @@ namespace Scripts.Game.Player.Movement
         {
             base.OnEnable();
             InputActions.Enable();
+
+            TempBeatThing.Instance.OnFullBeat += _ =>
+            {
+                _lastBeatTime = Time.time;
+                Debug.Log($"Last Beat Time = {_lastBeatTime}");    
+            };
         }
 
         private void OnDisable()
@@ -124,6 +144,20 @@ namespace Scripts.Game.Player.Movement
             base.OnDisable();
             InputActions.Disable();
         }
+
+        #region Beat Stuff
+        
+        [OdinSerialize]
+        private bool _isOnBeat
+        {
+            get => IsOnBeat;
+            set { }
+        }
+        
+        internal bool IsOnBeat => (Time.time <= (_lastBeatTime + beatGraceTime)); 
+
+        #endregion
+        
 
         #region Move Call API
         

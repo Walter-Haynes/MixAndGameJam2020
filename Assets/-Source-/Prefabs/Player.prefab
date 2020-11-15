@@ -77,12 +77,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de897fa48c28964fb02f395b37286bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 0
+    SerializedBytes: 2b01090000005f00690073004f006e00420065006100740000
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   boxCollider: {fileID: 2251716617091261612}
   visuals: {fileID: 2251716617104382816}
   groundLayer:
     serializedVersion: 2
     m_Bits: 513
   skinWidth: 0.01
+  beatGraceTime: 1
   <Gravity>k__BackingField: {x: 0, y: -50}
 --- !u!114 &2251716617091261615
 MonoBehaviour:
