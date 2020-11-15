@@ -33,17 +33,29 @@
     <list default="true" id="5faf068a-516a-4611-91a8-ad6a09e3bead" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MixAndGameJam2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/WalkAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/WalkAbility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Japan1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Japan1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Japan2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Japan2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Japan3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Japan3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Japan4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Japan4.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World - Train.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World - Train.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/bridge-japan.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/bridge-japan.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scenes/Tests/MovementTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scenes/Tests/MovementTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/Move10110.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/Move10110.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveAction.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveAction.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/InOrderRule.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/InOrderRule.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/PauseRule.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/PauseRule.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/WalkUntilBounceRule.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/WalkUntilBounceRule.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/WalkUntilStopRule.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/WalkUntilStopRule.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/[WalkUntilRule].cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/[WalkUntilRule].cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/ScaleAction.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/ScaleAction.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/ShootBulletAction.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/ShootBulletAction.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/ShootUp.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/ShootUp.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/New Folder.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/PlayerHealth.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +110,6 @@
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Bezier.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonLazyMonoBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Utilities/SingletonMonoBehaviour1.cs" />
-        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Audio/BeatDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/EnemyAction.cs" />
@@ -109,19 +120,21 @@
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootBulletAction.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/TempBeatThing.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Bullet.cs" />
-        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/PlayerHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Move.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRule.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/MoveRule.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/PauseRule.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/WalkUntilStop.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/WalkUntilBounce.cs" />
-        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/[WalkUntilRule].cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/ShootEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/WalkEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/InOrderRule.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveAction.cs" />
         <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/Abilities/WalkAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/Movement/PlayerController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/PlayerOutOfBounds.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Player/PlayerHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/-Source-/Scripts/Game/Enemies/Actions/MoveRules/[WalkUntilRule].cs" />
       </list>
     </option>
   </component>
