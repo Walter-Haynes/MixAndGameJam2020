@@ -16,7 +16,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Awake() {
         environmentGenerator.InitializeGrid();
-        Vector3 startingPosition = new Vector3(2f, 5f, zAxisValue);
+        Vector3 startingPosition = new Vector3(2f, 6f, zAxisValue);
         player = Instantiate(playerPrefab,startingPosition, Quaternion.identity);
         cinemachine.Follow = player.transform;
         cinemachine.LookAt = player.transform;

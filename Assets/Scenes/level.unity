@@ -796,7 +796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatDetection: {fileID: 1307662774}
   environmentGenerator: {fileID: 516849508}
-  playerPrefab: {fileID: 7046535466703915402, guid: 1061e4fafd406c946a5a411705ac66e6,
+  playerPrefab: {fileID: 2251716617091261608, guid: e66484a163dcbc94d9d4f5816c248bed,
     type: 3}
   cinemachine: {fileID: 1446343932}
 --- !u!4 &1959612384

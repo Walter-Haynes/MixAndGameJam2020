@@ -27,7 +27,7 @@ namespace Generation
         #region Bottom
 
         // Currently spawned tiles Tuple
-        // Gameobject tile, the kind of tile, and it's index in the pooler list
+        // Gameobject tile, the kind of tile, and it's index in the pooler list, and it's an obstacle type tile
         private Queue<(GameObject, ENVIRONMENT_TYPE, int)> currentTilesBottom;
         private Queue<(GameObject, ENVIRONMENT_TYPE, int)> currentTilesTop;
         private Queue<GameObject> currentObstacles;
@@ -38,6 +38,7 @@ namespace Generation
         private Vector3 currentRightPositionTop = Vector3.zero;
         // List of all tile types and their pools
         private Dictionary<ENVIRONMENT_TYPE, List<Pooler>> tilePools;
+        private Dictionary <string, bool> isObstacleTile; // I know this could be done better but time
         // List of all obstacles and their pools
         private Dictionary<string, Pooler> obstaclePools;
         // Total length of all the spawned tiles
@@ -45,7 +46,7 @@ namespace Generation
         private float currentTileLengthTop = 0f;
 
         // Used to track empty prefabs
-        private string previousGeneratedObject = "";
+        private string previousGeneratedObject;
 
         #endregion Bottom
 
@@ -56,6 +57,7 @@ namespace Generation
             currentRightPositionTop.y = topFloorOffset;
             tilePools = new Dictionary<ENVIRONMENT_TYPE, List<Pooler>>();
             obstaclePools = new Dictionary<string, Pooler>();
+            isObstacleTile = new Dictionary<string, bool>();
             InstantiateObjects();
             GenerateGrid();
         }
@@ -70,6 +72,7 @@ namespace Generation
                 if (poolerList == null)
                     tilePools[environments[i].type] = new List<Pooler>();
                 tilePools[environments[i].type].Add(pooler);
+                isObstacleTile[environments[i].prefab.name] = environments[i].isObstacleTypeTile;
             }
             // Obstacles
             for (int i = 0; i < obstacles.Count; ++i) {
@@ -130,7 +133,8 @@ namespace Generation
                 SetNewTileTotalLength(box.bounds.size.x, true);
             }
             else {
-                while (env.name == "Empty" && previousGeneratedObject == "Empty") {
+                // While previous was obstacle and current is obstacle
+                while (isObstacleTile.ContainsKey(env.name) && isObstacleTile.ContainsKey(previousGeneratedObject)) {
                     env = startingPools[randomNumber].GetObject();
                 }
                 Vector3 position = currentRightPositionTop;
