@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 117689121244858386}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.6399994, y: 3.8227158, z: 20.868332}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.9}
   m_Children: []
   m_Father: {fileID: 9006883487950208150}
   m_RootOrder: 8
@@ -122,8 +122,8 @@ MonoBehaviour:
   timeToBeatQuarter: 0.0125
   restSmoothTimeQuarter: 0.5
   type: 0
-  beatScale: {x: 1.5, y: 1.5, z: 1.5}
-  restScale: {x: 0.9, y: 0.9, z: 0.9}
+  beatScale: {x: 1, y: 1, z: 1}
+  restScale: {x: 0.7, y: 0.7, z: 0.7}
 --- !u!1 &1210773170904530146
 GameObject:
   m_ObjectHideFlags: 0
